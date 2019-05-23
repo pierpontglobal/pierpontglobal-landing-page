@@ -27,6 +27,7 @@ export const BasicChangeableButton = styled(Button)`
   box-shadow: none !important;
   font-weight: 900 !important;
   transition: 0.4s !important;
+  padding: 0 30px !important;
   :hover {
     opacity: 0.5 !important;
   }
