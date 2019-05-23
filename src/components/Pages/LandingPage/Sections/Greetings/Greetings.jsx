@@ -75,7 +75,7 @@ const Greetings = (props) => {
       </Stripes>
       <Content>
         <Text>
-          <Heading>La mejor manera de comparar carros para tu dealer</Heading>
+          <Heading>La mejor manera de comprar carros para tu dealer</Heading>
           <TextBody style={{marginTop: '30px'}}>
             PierpontGlobal es una plataforma que permite a los dealers de
             República Dominicana participar en las subastas organizadas por
