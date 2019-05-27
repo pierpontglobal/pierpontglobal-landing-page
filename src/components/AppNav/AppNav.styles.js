@@ -8,7 +8,7 @@ export const Bar = styled.div`
   top: 0;
   background-color: ${(props) => props.background};
   transition: background-color 0.4s ease;
-  z-index: 100;
+  z-index: 300;
   box-shadow: ${(props) =>
     props.background === 'transparent'
       ? 'none'
