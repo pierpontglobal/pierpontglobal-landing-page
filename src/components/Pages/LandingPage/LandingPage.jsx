@@ -2,17 +2,7 @@ import React from "react";
 import Greetings from "./Sections/Greetings/Greetings";
 import WhatWeDo from "./Sections/WhatWeDo/WhatWeDo";
 import Devices from "./Devices/Devices";
-import SearchListing from "./Sections/SearchListing/SearchListing";
-
-import { 
-  Sections,
-  SectionsTitle,
-  SectionsContent,
-  Title,
-  Message,
-  Gif,
-  TitleMessage,
-} from "./LandingPage.styles";
+import MainSections from "./Sections/MainSections/MainSections";
 
 const LandingPage = props => (
   <div
@@ -21,8 +11,9 @@ const LandingPage = props => (
   >
     <Greetings />
     <Devices />
-    <SearchListing />
+    <MainSections />
   </div>
 );
+
 
 export default LandingPage;
