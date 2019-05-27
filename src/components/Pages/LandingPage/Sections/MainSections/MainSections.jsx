@@ -155,11 +155,12 @@ const SectionParagraph = styled.div`
 const BackgroundStyle = styled.img`
   position: absolute;
   top: 0;
-  left: ${props => (props.index % 2 === 0) ? '' : '-60px'};
-  right: ${props => (props.index % 2 === 0) ? '-120px' : 'none'};
+  left: ${props => (props.index % 2 === 0) ? '' : '-220px'};
+  right: ${props => (props.index % 2 === 0) ? '-220px' : 'none'};
   z-index: 100;
   opacity: 0.08;
-  background-size: 300px 100px;
+  height: 170%;
+  width: 170%;
   transform: ${props => (props.index % 2 === 0) ? 'rotate(180deg)' : 'none'};
 `;
 
@@ -182,7 +183,6 @@ class MainSections extends React.Component {
         },
       ]
     }
-    this.searchListingSection = React.createRef();
   }
 
   componentDidMount = () => {
@@ -201,7 +201,7 @@ class MainSections extends React.Component {
       // Observer configuration
       const options = {
         root: null, // document viewport as a trigger
-        threshold: 0.30, // Execute callback on 30% of reveal
+        threshold: 0.20, // Execute callback on 20% of reveal
       };
 
       // Observer callback
