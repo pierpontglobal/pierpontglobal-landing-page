@@ -27,8 +27,8 @@ const Img = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 48px;
-  margin-bottom: 48px;
+  margin-top: 84px;
+  margin-bottom: 148px;
 `;
 
 const ImageBox = styled.div`
@@ -56,7 +56,7 @@ const Images = styled.div`
   align-items: center;
 `;
 
-const MailchimpWrapper = styled.div`
+const SectionWrapperWithImageLeft = styled.div`
   margin-top: 32px;
   width: 100%;
   display: grid;
@@ -66,7 +66,7 @@ const MailchimpWrapper = styled.div`
   margin-bottom: 148px;
 `;
 
-const MailchimpWrapperImageRight = styled.div`
+const SectionWrapperWithImageRight = styled.div`
   margin-top: 32px;
   width: 100%;
   display: grid;
@@ -77,7 +77,7 @@ const MailchimpWrapperImageRight = styled.div`
   justify-items: end;
 `;
 
-const MailchimpText = styled.div`
+const SectionTextContent = styled.div`
   width: 70%;
   height: 100%;
   display: flex;
@@ -87,7 +87,7 @@ const MailchimpText = styled.div`
   align-items: ${props => (props.index % 2 === 0) ? 'flex-end' : 'flex-start'};
 `;
 
-const MailchimpImage = styled.div`
+const SectionImage = styled.div`
   width: 90%;
   height: 100%;
   display: flex;
@@ -97,7 +97,7 @@ const MailchimpImage = styled.div`
   z-index: 200;
 `;
 
-const MailchimpGif = styled.img`
+const SectionImageGif = styled.img`
   width: 80%;
   height: auto;
   z-index: 200;
@@ -106,12 +106,12 @@ const MailchimpGif = styled.img`
   box-shadow: ${props => (props.index % 2 === 0) ? '48px 48px 16px 0px rgb(0, 0, 0, 0.1)' : '-48px 48px 16px 0px rgb(0, 0, 0, 0.1)'};
 `;
 
-const Mailtitle = styled.h1`
+const SectionTitle = styled.h1`
   font-weight: 100;
   font-size: 3.0rem;
 `;
 
-const MailParagrah = styled.div`
+const SectionParagraph = styled.div`
   width: 100%;
   padding-right: ${props => (props.index % 2 === 0) ? '0px' : '24px'};
   text-align: ${props => (props.index % 2 === 0) ? 'right' : 'left'};
@@ -148,54 +148,54 @@ const SearchListing = () => {
           </ImageBox>
         </Images>
       </Img>
-      <MailchimpWrapper>
-        <MailchimpImage>
-          <MailchimpGif index={1} src="/images/mailchimp.gif" />
+      <SectionWrapperWithImageLeft>
+        <SectionImage>
+          <SectionImageGif index={1} src="/images/mailchimp.gif" />
           <BackgroundStyle index={1} src="/images/background-style-colored.svg" />
-        </MailchimpImage>
-        <MailchimpText index={1}>
-          <Mailtitle>
+        </SectionImage>
+        <SectionTextContent index={1}>
+          <SectionTitle>
             Some awsome text
-          </Mailtitle>
-          <MailParagrah index={1}>
+          </SectionTitle>
+          <SectionParagraph index={1}>
             <span>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu efficitur ligula. Sed sagittis, sapien nec rhoncus scelerisque, erat augue pellentesque orci, sit amet ullamcorper mi augue in tellus. Praesent eu est vitae enim auctor eleifend. In pellentesque lobortis velit, sit amet ultricies arcu finibus id. Morbi et dignissim enim.
             </span>
-          </MailParagrah>
-        </MailchimpText>
-      </MailchimpWrapper>
-      <MailchimpWrapperImageRight>
-        <MailchimpText index={2}>
-          <Mailtitle>
+          </SectionParagraph>
+        </SectionTextContent>
+      </SectionWrapperWithImageLeft>
+      <SectionWrapperWithImageRight>
+        <SectionTextContent index={2}>
+          <SectionTitle>
             Some awsome text
-          </Mailtitle>
-          <MailParagrah index={2}>
+          </SectionTitle>
+          <SectionParagraph index={2}>
             <span>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu efficitur ligula. Sed sagittis, sapien nec rhoncus scelerisque, erat augue pellentesque orci, sit amet ullamcorper mi augue in tellus. Praesent eu est vitae enim auctor eleifend. In pellentesque lobortis velit, sit amet ultricies arcu finibus id. Morbi et dignissim enim.
             </span>
-          </MailParagrah>
-        </MailchimpText>
-        <MailchimpImage>
-          <MailchimpGif index={2} src="/images/mailchimp.gif" />
+          </SectionParagraph>
+        </SectionTextContent>
+        <SectionImage>
+          <SectionImageGif index={2} src="/images/mailchimp.gif" />
           <BackgroundStyle index={2} src="/images/background-style-colored.svg" />
-        </MailchimpImage>
-      </MailchimpWrapperImageRight>
-      <MailchimpWrapper>
-        <MailchimpImage>
-          <MailchimpGif index={3} src="/images/mailchimp.gif" />
+        </SectionImage>
+      </SectionWrapperWithImageRight>
+      <SectionWrapperWithImageLeft>
+        <SectionImage>
+          <SectionImageGif index={3} src="/images/mailchimp.gif" />
           <BackgroundStyle index={3} src="/images/background-style-colored.svg" />
-        </MailchimpImage>
-        <MailchimpText index={3}>
-          <Mailtitle>
+        </SectionImage>
+        <SectionTextContent index={3}>
+          <SectionTitle>
             Some awsome text
-          </Mailtitle>
-          <MailParagrah index={3}>
+          </SectionTitle>
+          <SectionParagraph index={3}>
             <span>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu efficitur ligula. Sed sagittis, sapien nec rhoncus scelerisque, erat augue pellentesque orci, sit amet ullamcorper mi augue in tellus. Praesent eu est vitae enim auctor eleifend. In pellentesque lobortis velit, sit amet ultricies arcu finibus id. Morbi et dignissim enim.
             </span>
-          </MailParagrah>
-        </MailchimpText>
-      </MailchimpWrapper>
+          </SectionParagraph>
+        </SectionTextContent>
+      </SectionWrapperWithImageLeft>
     </Wrapper>
   );
 };
