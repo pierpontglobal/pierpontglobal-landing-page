@@ -51,6 +51,6 @@ export const ItemsContainer = styled.div`
   position: absolute;
   left: 0;
   right: 0;
-  max-width: 1040px;
+  max-width: 1190px;
   padding: 0 10px;
 `;
