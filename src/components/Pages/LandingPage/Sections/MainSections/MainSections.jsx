@@ -122,22 +122,25 @@ const SectionTitle = styled.h1`
   font-weight: 200;
   font-size: 3.0rem;
   position: relative;
-  animation: appears 0.8s ease 0.5s;
+  animation: appears 0.8s ease 0.8s;
   opacity: 0;
   animation-fill-mode: forwards;
 
   @keyframes appears {
     0% {
       opacity: 0;
-      right: -220px;
+      right: ${props => (props.index % 2 === 0) ? 'none' : '-220px'};
+      left: ${props => (props.index % 2 === 0) ? '-220px' : 'none'};
     }
     90% {
       opacity: 0.95;
-      right: 0px;
+      right: ${props => (props.index % 2 === 0) ? 'none' : '0px'};
+      left: ${props => (props.index % 2 === 0) ? '0px' : 'none'};
     }
     100% {
       opacity: 1;
       right: '';
+      left: '';
     }
   }
 `;
@@ -146,10 +149,23 @@ const SectionParagraph = styled.div`
   width: 100%;
   padding-right: ${props => (props.index % 2 === 0) ? '0px' : '24px'};
   text-align: ${props => (props.index % 2 === 0) ? 'right' : 'left'};
+  opacity: 0;
+  animation: appears-paragraph 0.4s ease-in-out 1.2s;
+  animation-fill-mode: forwards;
+
   & > span {
     font-size: 1.25em;
     font-weight: 100;
     line-height: 36px;
+  }
+
+  @keyframes appears-paragraph {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 `;
 
@@ -274,30 +290,36 @@ class MainSections extends React.Component {
           <SectionTextContent index={1}>
             {
               sections[0].showTitle ? (
-                <SectionTitle id="search-listing-title">
-                  Search listings
-                </SectionTitle>) : null
+                <>
+                  <SectionTitle index={1} id="search-listing-title">
+                    Search listings
+                  </SectionTitle>
+                  <SectionParagraph index={1}>
+                    <span>
+                    Our platform ties together thousands of listings, from dozens of Manheim Auction locations, giving you access to infinitely more vehicle options to buy from.
+                    </span>
+                  </SectionParagraph>
+                </>
+              ) : null
             }
-            <SectionParagraph index={1}>
-              <span>
-              Our platform ties together thousands of listings, from dozens of Manheim Auction locations, giving you access to infinitely more vehicle options to buy from.
-              </span>
-            </SectionParagraph>
           </SectionTextContent>
         </SectionWrapperWithImageLeft>
         <SectionWrapperWithImageRight id="place-bid-section">
           <SectionTextContent index={2}>
             {
               sections[1].showTitle ? (
-                <SectionTitle id="place-bid-title">
-                  Place bids
-                </SectionTitle>) : null
+               <>
+                 <SectionTitle index={2} id="place-bid-title">
+                    Place bids
+                  </SectionTitle>
+                  <SectionParagraph index={2}>
+                    <span>
+                      Bid on vehicles right from your computer. Using our provided pricing information and condition reports, you’ll have all the info you need to place well calculated bids.
+                    </span>
+                  </SectionParagraph>
+               </>
+              ) : null
             }
-            <SectionParagraph index={2}>
-              <span>
-                Bid on vehicles right from your computer. Using our provided pricing information and condition reports, you’ll have all the info you need to place well calculated bids.
-              </span>
-            </SectionParagraph>
           </SectionTextContent>
           <SectionImage>
             {
@@ -316,15 +338,18 @@ class MainSections extends React.Component {
           <SectionTextContent index={3}>
             {
               sections[2].showTitle ? (
-                <SectionTitle id="delivery-title">
-                  Delivery
-                </SectionTitle>) : null
+                <>
+                  <SectionTitle index={3} id="delivery-title">
+                    Delivery
+                  </SectionTitle>
+                  <SectionParagraph index={3}>
+                    <span>
+                      We handle the process of delivering the vehicles from the auction to your near port, while giving you tracking updates along the way. We will get you the best ground transport rates, shipping rates, as well as import customs and tax rates. With all invoices provided in real time.
+                    </span>
+                  </SectionParagraph>
+                </>
+              ) : null
             }
-            <SectionParagraph index={3}>
-              <span>
-                We handle the process of delivering the vehicles from the auction to your near port, while giving you tracking updates along the way. We will get you the best ground transport rates, shipping rates, as well as import customs and tax rates. With all invoices provided in real time.
-              </span>
-            </SectionParagraph>
           </SectionTextContent>
         </SectionWrapperWithImageLeft>
       </Wrapper>
