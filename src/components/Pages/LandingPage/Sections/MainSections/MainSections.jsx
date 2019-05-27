@@ -101,16 +101,28 @@ const SectionImageGif = styled.img`
   width: 80%;
   height: auto;
   z-index: 200;
-  opacity: 0.8;
+  opacity: 0;
   transform: ${props => (props.index % 2 === 0) ? 'translateX(-45px) translateY(35px) rotate(9deg)' : 'translateX(45px) translateY(55px) rotate(-9deg)'};
   box-shadow: ${props => (props.index % 2 === 0) ? '48px 48px 16px 0px rgb(0, 0, 0, 0.1)' : '-48px 48px 16px 0px rgb(0, 0, 0, 0.1)'};
+  animation: appears 1s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  
+  @keyframes appears-image {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 const SectionTitle = styled.h1`
-  font-weight: 100;
+  font-weight: 200;
   font-size: 3.0rem;
   position: relative;
-  animation: appears 0.8s;
+  animation: appears 0.8s ease 0.5s;
+  opacity: 0;
   animation-fill-mode: forwards;
 
   @keyframes appears {
@@ -258,7 +270,9 @@ class MainSections extends React.Component {
         </Img>
         <SectionWrapperWithImageLeft id="search-listing-section">
           <SectionImage>
-            <SectionImageGif index={1} src="/images/mailchimp.gif" />
+            {
+              !sections[0].showTitle ? null : (<SectionImageGif index={1} src="/images/mailchimp.gif" />)
+            }
             <BackgroundStyle index={1} src="/images/background-style-colored.svg" />
           </SectionImage>
           <SectionTextContent index={1}>
@@ -290,13 +304,17 @@ class MainSections extends React.Component {
             </SectionParagraph>
           </SectionTextContent>
           <SectionImage>
-            <SectionImageGif index={2} src="/images/mailchimp.gif" />
+            {
+              !sections[1].showTitle ? null : (<SectionImageGif index={2} src="/images/mailchimp.gif" />)
+            }
             <BackgroundStyle index={2} src="/images/background-style-colored.svg" />
           </SectionImage>
         </SectionWrapperWithImageRight>
         <SectionWrapperWithImageLeft id="delivery-section">
           <SectionImage>
-            <SectionImageGif index={3} src="/images/mailchimp.gif" />
+          { 
+              !sections[2].showTitle ? null : (<SectionImageGif index={3} src="/images/mailchimp.gif" />)
+            }
             <BackgroundStyle index={3} src="/images/background-style-colored.svg" />
           </SectionImage>
           <SectionTextContent index={3}>
