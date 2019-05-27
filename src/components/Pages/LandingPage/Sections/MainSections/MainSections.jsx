@@ -148,6 +148,7 @@ const SectionParagraph = styled.div`
   & > span {
     font-size: 1.25em;
     font-weight: 100;
+    line-height: 36px;
   }
 `;
 
