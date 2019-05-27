@@ -159,7 +159,7 @@ const BackgroundStyle = styled.img`
   left: ${props => (props.index % 2 === 0) ? '' : '-220px'};
   right: ${props => (props.index % 2 === 0) ? '-220px' : 'none'};
   z-index: 100;
-  opacity: 0.08;
+  opacity: 0.1;
   height: 170%;
   width: 170%;
   transform: ${props => (props.index % 2 === 0) ? 'rotate(180deg)' : 'none'};
@@ -245,12 +245,6 @@ class MainSections extends React.Component {
       this.observer.observe(this.placeBidSection);
       this.observer.observe(this.deliverySection);
     }
-  }
-
-  showTitle = (elementId) => {
-    const element = document.querySelector(`#${elementId}`);
-    element.style.WebkitAnimationName = "appears";
-    
   }
 
   render() {
