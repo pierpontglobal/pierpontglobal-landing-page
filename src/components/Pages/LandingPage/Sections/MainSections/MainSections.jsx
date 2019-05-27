@@ -95,6 +95,7 @@ const SectionImage = styled.div`
   align-items: center;
   position: relative;
   z-index: 200;
+  min-height: 220px;
 `;
 
 const SectionImageGif = styled.img`
