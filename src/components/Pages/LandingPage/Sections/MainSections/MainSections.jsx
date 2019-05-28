@@ -19,6 +19,15 @@ const Title = styled.div`
     font-weight: 100;
     font-size: 3.25rem;
   }
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 0px;
+    margin-bottom: 8px;
+    & > h1 {
+      font-weight: 100;
+      font-size: 1.75rem;
+    }
+  }
 `;
 
 const Img = styled.div`
@@ -29,6 +38,9 @@ const Img = styled.div`
   align-items: center;
   margin-top: 84px;
   margin-bottom: 148px;
+  @media only screen and (max-width: 768px) {
+    margin-top: 8px;
+  }
 `;
 
 const ImageBoxInner = styled.div`
@@ -50,10 +62,17 @@ const ImageBox = styled.div`
   overflow: visible;
   perspective: 1000px;
   cursor: pointer;
+
   &:hover {
     & > ${ImageBoxInner} {
       transform: rotateY(180deg);
     }
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: calc(100vw - 40px);
+    height: 220px;
+    margin: 0 auto;
   }
 `;
 
@@ -70,6 +89,10 @@ const ImageBoxInnerBack = styled.div`
   backface-visibility: hidden;
   box-shadow: 0px 0px 16px 0px rgb(0, 0, 0, 0.05);
   transform: rotateY(180deg);
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 64px;
+  }
 `;
 
 const ImageBackTitle = styled.div`
@@ -127,12 +150,21 @@ const ImgWrapper = styled.img`
   padding: 16px;
   z-index: 200;
   margin-top: 32px;
+
+  @media only screen and (max-width: 768px) {
+    width: 236px;
+    margin-bottom: 80px;
+  }
 `;
 const ImageWrapperAdesa = styled.img`
   width: 386.4px;
   height: auto;
   padding: 16px;
   z-index: 200;
+
+  @media only screen and (max-width: 768px) {
+    width: 286.4px;
+  }
 `;
 
 const Images = styled.div`
@@ -141,6 +173,10 @@ const Images = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 64px;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const SectionWrapperWithImageLeft = styled.div`
