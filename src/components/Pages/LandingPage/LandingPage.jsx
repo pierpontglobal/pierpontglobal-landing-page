@@ -5,6 +5,7 @@ import Devices from "./Devices/Devices";
 import MainSections from "./Sections/MainSections/MainSections";
 import Footer from "./Sections/Footer/Footer";
 import Brands from "./Sections/Brands/Brands";
+import Testimonials from './Sections/Testimonials/Testimonials';
 import styled from 'styled-components';
 
 const BrandsWrapper = styled.div`
@@ -16,20 +17,34 @@ const BrandsWrapper = styled.div`
   margin-right: auto;
 `;
 
-const LandingPage = props => (
-  <div
-    className="LandingPageWrapper"
-    style={{ overflow: "hidden", position: "relative" }}
-  >
-    <Greetings />
-    <Devices />
-    <MainSections />
-    <BrandsWrapper>
-      <Brands />
-    </BrandsWrapper>
-    <Footer />
-  </div>
-);
+const TestimonialsWrapper = styled.div`
+  width: 80%;
+  height: auto;
+  margin-top: 220px;
+  margin-bottom: 102px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const LandingPage = (props) => {
+  return (
+    <div
+      className="LandingPageWrapper"
+      style={{ overflow: "hidden", position: "relative" }}
+    >
+      <Greetings />
+      <Devices />
+      <MainSections />
+      <BrandsWrapper>
+        <Brands />
+      </BrandsWrapper>
+      <TestimonialsWrapper>
+        <Testimonials />
+      </TestimonialsWrapper>
+      <Footer />
+    </div>
+  );
+};
 
 
 export default LandingPage;
