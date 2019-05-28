@@ -40,6 +40,14 @@ const Cards = styled.div`
     width: 100%;
     flex-direction: column;
   } 
+
+  @media only screen and (max-width: 1104px) and (min-width: 960px) {
+    width: 85%
+  }
+
+  @media only screen and (max-width: 960px) and (min-width: 768px) {
+    width: 95%
+  }
 `;
 
 const Card = styled.div`
@@ -88,7 +96,8 @@ const CardBody = styled.div`
 `;
 
 const CardsIndicator = styled.div`
-  margin-top: 54px;
+  margin-top: 32px;
+  margin-bottom: 42px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,6 +108,7 @@ const Indicator = styled.div`
   width: 60px;
   height: 6px;
   background-color: ${props => props.active ? '#7bdff2' : 'rgb(0, 0, 0, 0.4)'};
+  cursor: pointer;
 `;
 
 const UserPhoto = styled.img`
@@ -126,55 +136,139 @@ const UserRole = styled.div`
   }
 `;
 
-const Testimonials = (props) => {
-  return (
-    <Wrapper>
-      <SectionTitle>
-        <span>
-          What our clients say...
-        </span>
-      </SectionTitle>
-      <Cards>
-        <Card id={1}>
-          <CardHeader>
-            <UserPhoto src="/images/smaple-user-1.png" />
-            <UserName id={1}>
-              <span>Jhon Doe</span>
-            </UserName>
-            <UserRole id={1}>
-              <span>Car dealership owner</span>
-            </UserRole>
-          </CardHeader>
-          <CardBody id={1}>
-            <span>
-              Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.
-            </span>
-          </CardBody>
-        </Card>
-        <Card id={2}>
-          <CardHeader>
-            <UserPhoto src="/images/sample-user-2.jpg" />
-            <UserName id={2}>
-              <span>Luis Almonte</span>
-            </UserName>
-            <UserRole id={2}>
-              <span>Car dealership owner</span>
-            </UserRole>
-          </CardHeader>
-          <CardBody id={2}>
-            <span>
-              Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.
-            </span>
-          </CardBody>
-        </Card>
-      </Cards>
-      <CardsIndicator>
-        <Indicator active={true} />
-        <Indicator active={false} />
-        <Indicator active={false} />
-      </CardsIndicator>
-    </Wrapper>
-  );
+class Testimonials extends React.Component {
+  state = {
+    testimonials: [
+      {
+        id: 1,
+        show: true,
+        name: 'Jhon Doe',
+        role: 'Car dealership owner',
+        picture: '/images/smaple-user-1.png',
+        message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
+      },
+      {
+        id: 2,
+        show: true,
+        name: 'Pedro Almonte',
+        role: 'Car dealership owner',
+        picture: '/images/sample-user-2.jpg',
+        message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
+      },
+      {
+        id: 3,
+        show: false,
+        name: 'Marcos Berroa',
+        role: 'Car dealership owner',
+        picture: '/images/sample-user-3.jpeg',
+        message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
+      },
+      {
+        id: 4,
+        show: false,
+        name: 'Jose y Carlos Santana',
+        role: 'Car dealership owner',
+        picture: '/images/sample-user-4.jpg',
+        message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
+      },
+    ],
+  }
+
+  nextTestimonials = (canExecute, indicatorIndex) => {
+    if (canExecute) {
+      console.log('Can execute!');
+      let testimonials = [...this.state.testimonials];
+
+      // Reset
+      testimonials.forEach(t => {
+        t.show = false;
+      });
+
+      // Calculate next group
+      let nextGroup = indicatorIndex * 2;
+
+      console.log('nextGroup >>>');
+      console.log(nextGroup, testimonials);
+
+      testimonials[nextGroup - 1].show = true;
+      testimonials[nextGroup - 2].show = true;
+
+      // Update testimonials
+      this.setState({
+        testimonials
+      });
+    }
+  }
+
+  render() {
+    const { testimonials } = this.state;
+
+    const howManyIndicators = Math.floor(testimonials.length / 2);
+
+    console.log('Indicators COUNT >>> ');
+    console.log(howManyIndicators);
+    
+    let indicators = [];
+    for(let i = 0; i < howManyIndicators; i++) {
+      const testimonial = testimonials[i + 1] || undefined;
+  
+      if (!!testimonial) {
+        indicators[i] = {
+          active: false,
+        }; 
+        if (testimonial.show) {
+          indicators[i].active = true;
+        }
+      }
+    }
+
+    console.log('Indicators >>> ');
+    console.log(indicators);
+
+    return (
+      <Wrapper>
+        <SectionTitle>
+          <span>
+            What our clients say...
+          </span>
+        </SectionTitle>
+        <Cards>
+          {
+            testimonials.map((t) => {
+              if (t.show) {
+                return (<Card key={ t.id } id={ t.id }>
+                          <CardHeader>
+                            <UserPhoto src={ t.picture } />
+                            <UserName id={ t.id }>
+                              <span>{ t.name }</span>
+                            </UserName>
+                            <UserRole id={ t.id }>
+                              <span>{ t.role }</span>
+                            </UserRole>
+                          </CardHeader>
+                          <CardBody id={t.id}>
+                            <span>
+                              { t.message }
+                            </span>
+                          </CardBody>
+                        </Card>
+                      );
+              } else {
+                return null;
+              }
+            })
+          }
+        </Cards>
+        <CardsIndicator>
+          {
+            indicators.map((indicator, index) => (
+              <Indicator active={ indicator.active } onClick={() => this.nextTestimonials( !indicator.active, index + 1 )} />
+            )
+          )}
+        </CardsIndicator>
+      </Wrapper>
+    );
+  }
 };
 
 export default Testimonials;
