@@ -57,8 +57,21 @@ const Card = styled.div`
   display: grid;
   grid-template-rows: 45% 55%;
   box-sizing: border-box;
-  background: ${props => (props.id % 2 !== 0) ? 'radial-gradient(farthest-corner at 40px 40px, #7358ff 15%, #7bdff2 100%)' : ''};
+  background: ${props => (props.cardId % 2 !== 0) ? 'radial-gradient(farthest-corner at 40px 40px, #7358ff 15%, #7bdff2 100%)' : ''};
   margin: 8px;
+
+  @keyframes remove-card {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.03;
+    }
+    100% {
+      opacity: 0;
+      transform: rotateY(180deg);
+    }
+  }
 
   @media only screen and (max-width: 768px) {
     height: auto;
@@ -84,7 +97,7 @@ const CardBody = styled.div`
   text-align: justify;
   overflow: hidden;
   & > span {
-    color: ${props => (props.id % 2 !== 0) ? 'white' : 'rgb(0, 0, 0, 0.6)'};
+    color: ${props => (props.cardId % 2 !== 0) ? 'white' : 'rgb(0, 0, 0, 0.6)'};
     line-height: 28px;
     ::after {
       content: '"';
@@ -122,8 +135,8 @@ const UserName = styled.div`
   padding: 8px;
   & > span {
     font-weight: 400;
-    color: ${props => (props.id % 2 !== 0) ? 'white' : 'black'};
-    text-shadow: ${props => (props.id % 2 !== 0) ? '0px 0px 4px rgb(0,0,0,0.3)' : ''};
+    color: ${props => (props.cardId % 2 !== 0) ? 'white' : 'black'};
+    text-shadow: ${props => (props.cardId % 2 !== 0) ? '0px 0px 4px rgb(0,0,0,0.3)' : ''};
   }
 `;
 
@@ -131,8 +144,8 @@ const UserRole = styled.div`
   padding: 8px;
   & > span {
     font-weight: 100;
-    color: ${props => (props.id % 2 !== 0) ? 'white' : 'black'};
-    text-shadow: ${props => (props.id % 2 !== 0) ? '0px 0px 4px rgb(0,0,0,0.3)' : ''};
+    color: ${props => (props.cardId % 2 !== 0) ? 'white' : 'black'};
+    text-shadow: ${props => (props.cardId % 2 !== 0) ? '0px 0px 4px rgb(0,0,0,0.3)' : ''};
   }
 `;
 
@@ -176,27 +189,34 @@ class Testimonials extends React.Component {
 
   nextTestimonials = (canExecute, indicatorIndex) => {
     if (canExecute) {
-      console.log('Can execute!');
-      let testimonials = [...this.state.testimonials];
 
-      // Reset
-      testimonials.forEach(t => {
-        t.show = false;
+      // Animate cards to exit
+
+      const cards = document.querySelectorAll('#showing-card');
+
+      cards.forEach(card => {
+        card.style.animation = "remove-card 0.8s";
       });
+      
+      setTimeout(() => {
+        let testimonials = [...this.state.testimonials];
 
-      // Calculate next group
-      let nextGroup = indicatorIndex * 2;
+        // Reset
+        testimonials.forEach(t => {
+          t.show = false;
+        });
 
-      console.log('nextGroup >>>');
-      console.log(nextGroup, testimonials);
+        // Calculate next group
+        let nextGroup = indicatorIndex * 2;
 
-      testimonials[nextGroup - 1].show = true;
-      testimonials[nextGroup - 2].show = true;
+        testimonials[nextGroup - 1].show = true;
+        testimonials[nextGroup - 2].show = true;
 
-      // Update testimonials
-      this.setState({
-        testimonials
-      });
+        // Update testimonials
+        this.setState({
+          testimonials
+        });
+      }, 500);
     }
   }
 
@@ -236,17 +256,17 @@ class Testimonials extends React.Component {
           {
             testimonials.map((t) => {
               if (t.show) {
-                return (<Card key={ t.id } id={ t.id }>
+                return (<Card key={ t.id } cardId={ t.id } id="showing-card" animationName={'appears-card'}>
                           <CardHeader>
                             <UserPhoto src={ t.picture } />
-                            <UserName id={ t.id }>
+                            <UserName cardId={ t.id }>
                               <span>{ t.name }</span>
                             </UserName>
-                            <UserRole id={ t.id }>
+                            <UserRole cardId={ t.id }>
                               <span>{ t.role }</span>
                             </UserRole>
                           </CardHeader>
-                          <CardBody id={t.id}>
+                          <CardBody cardId={t.id}>
                             <span>
                               { t.message }
                             </span>
