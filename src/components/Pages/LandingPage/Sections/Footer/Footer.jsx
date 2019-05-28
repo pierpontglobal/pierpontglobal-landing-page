@@ -44,6 +44,10 @@ const FooterSections = styled.div`
   display: flex;
   flex-direction: row;
   padding-bottom: 64px;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const Section = styled.div`
@@ -52,6 +56,11 @@ const Section = styled.div`
   box-sizing: border-box;
   padding-top: 64px;
   margin-right: 32px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100vw;
+    padding: 16px;
+  }
 `;
 
 const LogoSection = styled(Section)`
@@ -63,21 +72,41 @@ const LogoSection = styled(Section)`
 const CoreLinksSection = styled(Section)`
   display: flex;
   flex-direction: column;
+
+  /* Due to our development need, I'll just hide this on mobile. The correct form is to toggle its content. */
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const InformationSection = styled(Section)`
   display: flex;
   flex-direction: column;
+  
+  /* Due to our development need, I'll just hide this on mobile. The correct form is to toggle its content. */
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const KeepInTouchSection = styled(Section)`
   display: flex;
   flex-direction: column;
+
+  /* Due to our development need, I'll just hide this on mobile. The correct form is to toggle its content. */
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const AboutCompnaySection = styled(Section)`
   display: flex;
   flex-direction: column;
+
+  /* Due to our development need, I'll just hide this on mobile. The correct form is to toggle its content. */
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const LogoWrapper = styled.img`
@@ -103,6 +132,10 @@ const SectionTitle = styled.div`
 
     transform: rotate(33deg);
   }
+
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const SectionLinks = styled.ul`
@@ -110,6 +143,11 @@ const SectionLinks = styled.ul`
   height: auto;
   list-style: none;
   margin-top: 32px;
+  overflow: hidden;
+
+  @media only screen and (max-width: 768px) {
+    height: 0px;
+  }
 `;
 
 const SectionLink = styled.li`
@@ -125,6 +163,10 @@ const SectionLink = styled.li`
       text-decoration: underline;
       color: rgb(0, 0, 0, 0.95);
     }
+  }
+
+  @media only screen and (max-width: 768px) {
+    text-align: center;
   }
 `;
 
@@ -156,11 +198,21 @@ const FooterBottom = styled.div`
   justify-content: space-between;
   align-items: center;
   z-index: 300;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    padding: 16px;
+  }
 `;
 
 const FooterBottomBox = styled.div`
   width: 33%;
   height: 100%;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const RighstReserved = styled(FooterBottomBox)`
@@ -219,6 +271,10 @@ const ActionButton = styled.div`
     color: rgb(115, 88, 255, 0.60);
     font-weight: 600;
     transition: all 0.4s;
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin-top: -140px;
   }
 `;
 
