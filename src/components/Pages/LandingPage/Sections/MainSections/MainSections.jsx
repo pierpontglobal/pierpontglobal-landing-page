@@ -40,6 +40,7 @@ const Img = styled.div`
   margin-bottom: 148px;
   @media only screen and (max-width: 768px) {
     margin-top: 8px;
+    margin-bottom: 48px;
   }
 `;
 
@@ -176,6 +177,7 @@ const Images = styled.div`
 
   @media only screen and (max-width: 768px) {
     flex-direction: column;
+    margin-bottom: 0px;
   }
 `;
 
@@ -187,6 +189,12 @@ const SectionWrapperWithImageLeft = styled.div`
   grid-template-rows: auto;
   position: relative;
   margin-bottom: 148px;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: auto;
+    grid-template-rows: 40% 60%;
+    margin-bottom: 48px;
+  }
 `;
 
 const SectionWrapperWithImageRight = styled.div`
@@ -198,6 +206,12 @@ const SectionWrapperWithImageRight = styled.div`
   position: relative;
   margin-bottom: 148px;
   justify-items: end;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: auto;
+    grid-template-rows: 40% 60%;
+    margin-bottom: 48px;
+  }
 `;
 
 const SectionTextContent = styled.div`
@@ -241,6 +255,12 @@ const SectionImageGif = styled.img`
       opacity: 1;
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 80%;
+    box-shadow: ${props => (props.index % 2 === 0) ? '4px 4px 4px 0px rgb(0, 0, 0, 0.1)' : '-4px 4px 4px 0px rgb(0, 0, 0, 0.1)'};
+    transform: ${props => (props.index % 2 === 0) ? 'translateX(-15px) translateY(15px) rotate(0deg)' : 'translateX(15px) translateY(15px) rotate(0deg)'};
+  }
 `;
 
 const SectionTitle = styled.h1`
@@ -250,6 +270,10 @@ const SectionTitle = styled.h1`
   animation: appears 0.8s ease 0.8s;
   opacity: 0;
   animation-fill-mode: forwards;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 2.4rem;
+  }
 
   @keyframes appears {
     0% {
@@ -304,6 +328,13 @@ const BackgroundStyle = styled.img`
   height: 170%;
   width: 170%;
   transform: ${props => (props.index % 2 === 0) ? 'rotate(180deg)' : 'none'};
+
+  @media only screen and (max-width: 768px) {
+    height: 100%;
+    width: 100%;
+    left: ${props => (props.index % 2 === 0) ? '' : '-120px'};
+    right: ${props => (props.index % 2 === 0) ? '-120px' : 'none'};
+  }
 `;
 
 class MainSections extends React.Component {
