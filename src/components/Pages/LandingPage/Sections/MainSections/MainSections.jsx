@@ -31,22 +31,108 @@ const Img = styled.div`
   margin-bottom: 148px;
 `;
 
+const ImageBoxInner = styled.div`
+  position: relative;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+`;
+
 const ImageBox = styled.div`
   width: 400px;
-  height: auto;
+  height: 180px;
   padding: 8px;
   margin: 12px;
+  position: relative;
+  background: transparent;
+  overflow: visible;
+  perspective: 1000px;
+  cursor: pointer;
+  &:hover {
+    & > ${ImageBoxInner} {
+      transform: rotateY(180deg);
+    }
+  }
 `;
+
+const ImageBoxInnerFront = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+`;
+
+const ImageBoxInnerBack = styled.div`
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  box-shadow: 0px 0px 16px 0px rgb(0, 0, 0, 0.05);
+  transform: rotateY(180deg);
+`;
+
+const ImageBackTitle = styled.div`
+  width: 100%;
+  text-align: center;
+  padding: 8px;
+  margin-top: 8px;
+  & > span {
+    font-weight: 400;
+    font-size: 1.35rem;
+  }
+  & > img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-size: cover;
+  }
+`;
+
+const ImageBackText = styled.div`
+  text-align: justify;
+  padding: 8px;
+  margin-top: 8px;
+  padding: 16px;
+  & > span {
+    font-weight: 100;
+    font-size: 1.05rem;
+  }
+`;
+
+const WaveStyle = styled.img`
+  position: absolute;
+  top: 70px;
+  left: -160px;
+  z-index: 0.8;
+  z-index: 100;
+  opacity: 0.08;
+`;
+
+const WaveStyleRight = styled.img`
+  position: absolute;
+  top: 100px;
+  right: -160px;
+  z-index: 0.8;
+  z-index: 100;
+  opacity: 0.08;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+`;
+
 
 const ImgWrapper = styled.img`
   width: 336px;
   height: auto;
   padding: 16px;
+  z-index: 200;
+  margin-top: 32px;
 `;
 const ImageWrapperAdesa = styled.img`
   width: 386.4px;
   height: auto;
   padding: 16px;
+  z-index: 200;
 `;
 
 const Images = styled.div`
@@ -54,6 +140,7 @@ const Images = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 64px;
 `;
 
 const SectionWrapperWithImageLeft = styled.div`
@@ -275,10 +362,40 @@ class MainSections extends React.Component {
           </Title>
           <Images>
             <ImageBox>
-              <ImgWrapper src="/images/manheim.jpg" />
+              <ImageBoxInner>
+                <ImageBoxInnerFront>
+                  <ImgWrapper src="/images/manheim.jpg" />
+                </ImageBoxInnerFront>
+                <ImageBoxInnerBack>
+                  <ImageBackTitle>
+                    <img src="/images/manheim-logotype.gif" />
+                    {/* <span>Manheim</span> */}
+                  </ImageBackTitle>
+                  <ImageBackText>
+                    <span>
+                      Loremp ipsum manh aqui nased. Loremp ipsum manh aqui nased, Loremp ipsum manh aqui nased. Loremp ipsum manh aqui nased.
+                    </span>
+                  </ImageBackText>
+                </ImageBoxInnerBack>
+              </ImageBoxInner>
             </ImageBox>
             <ImageBox>
-              <ImgWrapper src="/images/adesa.gif" />
+              <ImageBoxInner>
+                <ImageBoxInnerFront>
+                  <ImageWrapperAdesa src="/images/adesa.gif" />
+                </ImageBoxInnerFront>
+                <ImageBoxInnerBack>
+                  <ImageBackTitle>
+                    <img src="/images/adesa-logotype.jpg" />
+                    {/* <span>Adesa</span> */}
+                  </ImageBackTitle>
+                  <ImageBackText>
+                    <span>
+                      Loremp ipsum manh aqui nased. Loremp ipsum manh aqui nased, Loremp ipsum manh aqui nased. Loremp ipsum manh aqui nased.
+                    </span>
+                  </ImageBackText>
+                </ImageBoxInnerBack>
+              </ImageBoxInner>
             </ImageBox>
           </Images>
         </Img>
