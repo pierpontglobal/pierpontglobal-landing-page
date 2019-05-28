@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -165,7 +166,7 @@ class Testimonials extends React.Component {
         },
         {
           id: 2,
-          show: false,
+          show: true,
           name: 'Pedro Almonte',
           role: 'Car dealership owner',
           picture: '/images/sample-user-2.jpg',
@@ -190,10 +191,14 @@ class Testimonials extends React.Component {
       ],
       indicators: [],
     };
-    this.quantityToShow = 1;
+    this.quantityToShow = 2;
   }
 
   componentDidMount = () => {
+    this.createIndicators();
+  }
+
+  createIndicators = () => {
     const { testimonials } = this.state;
 
     const howManyIndicators = Math.floor(testimonials.length / this.quantityToShow);
@@ -210,7 +215,49 @@ class Testimonials extends React.Component {
 
     this.setState({
       indicators
+    }, () => {
+      window.addEventListener("resize", this.onResize());
     });
+  }
+
+  recreateIndicators = () => {
+    const { testimonials } = this.state;
+
+    const howManyIndicators = Math.floor(testimonials.length / this.quantityToShow);
+    
+    let indicators = [];
+    // Create indicators
+    for(let i = 0; i < howManyIndicators; i++) {
+      indicators.push({
+        active: false,
+        test: null,
+      });
+    }
+    indicators[0].active = true;
+
+    return indicators;
+  }
+
+  onResize = () => {
+
+    const isMobile = window.innerWidth < 768 ? true : false;
+    if (isMobile) {
+      this.quantityToShow = 1;
+      let testimonials = [...this.state.testimonials];
+      let indicators = this.recreateIndicators();
+      testimonials.forEach(t => {
+        t.show = false;
+      });
+      testimonials[0].show = true;
+      
+      this.setState({
+        indicators,
+        testimonials,
+      });
+    } else {
+      this.quantityToShow = 2;
+    }
+
   }
 
   nextTestimonials = (canExecute, indicatorIndex) => {
@@ -262,6 +309,14 @@ class Testimonials extends React.Component {
         });
       }, 500);
     }
+  }
+
+  showByOne = () => {
+    this.quantityToShow = 1;
+  }
+  
+  componentWillReceiveProps = (newProps) => {
+    console.log(newProps);
   }
 
   render() {
