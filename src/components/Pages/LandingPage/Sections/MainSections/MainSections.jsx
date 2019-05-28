@@ -19,6 +19,15 @@ const Title = styled.div`
     font-weight: 100;
     font-size: 3.25rem;
   }
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 0px;
+    margin-bottom: 8px;
+    & > h1 {
+      font-weight: 100;
+      font-size: 1.75rem;
+    }
+  }
 `;
 
 const Img = styled.div`
@@ -29,24 +38,134 @@ const Img = styled.div`
   align-items: center;
   margin-top: 84px;
   margin-bottom: 148px;
+  @media only screen and (max-width: 768px) {
+    margin-top: 8px;
+    margin-bottom: 48px;
+  }
+`;
+
+const ImageBoxInner = styled.div`
+  position: relative;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 `;
 
 const ImageBox = styled.div`
   width: 400px;
-  height: auto;
+  height: 180px;
   padding: 8px;
   margin: 12px;
+  position: relative;
+  background: transparent;
+  overflow: visible;
+  perspective: 1000px;
+  cursor: pointer;
+
+  &:hover {
+    & > ${ImageBoxInner} {
+      transform: rotateY(180deg);
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: calc(100vw - 40px);
+    height: 220px;
+    margin: 0 auto;
+  }
 `;
+
+const ImageBoxInnerFront = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+`;
+
+const ImageBoxInnerBack = styled.div`
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  box-shadow: 0px 0px 16px 0px rgb(0, 0, 0, 0.05);
+  transform: rotateY(180deg);
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 64px;
+  }
+`;
+
+const ImageBackTitle = styled.div`
+  width: 100%;
+  text-align: center;
+  padding: 8px;
+  margin-top: 8px;
+  & > span {
+    font-weight: 400;
+    font-size: 1.35rem;
+  }
+  & > img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-size: cover;
+  }
+`;
+
+const ImageBackText = styled.div`
+  text-align: justify;
+  padding: 8px;
+  margin-top: 8px;
+  padding: 16px;
+  & > span {
+    font-weight: 100;
+    font-size: 1.05rem;
+  }
+`;
+
+const WaveStyle = styled.img`
+  position: absolute;
+  top: 70px;
+  left: -160px;
+  z-index: 0.8;
+  z-index: 100;
+  opacity: 0.08;
+`;
+
+const WaveStyleRight = styled.img`
+  position: absolute;
+  top: 100px;
+  right: -160px;
+  z-index: 0.8;
+  z-index: 100;
+  opacity: 0.08;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+`;
+
 
 const ImgWrapper = styled.img`
   width: 336px;
   height: auto;
   padding: 16px;
+  z-index: 200;
+  margin-top: 32px;
+
+  @media only screen and (max-width: 768px) {
+    width: 236px;
+    margin-bottom: 80px;
+  }
 `;
 const ImageWrapperAdesa = styled.img`
   width: 386.4px;
   height: auto;
   padding: 16px;
+  z-index: 200;
+
+  @media only screen and (max-width: 768px) {
+    width: 286.4px;
+  }
 `;
 
 const Images = styled.div`
@@ -54,6 +173,12 @@ const Images = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 64px;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
 `;
 
 const SectionWrapperWithImageLeft = styled.div`
@@ -64,6 +189,12 @@ const SectionWrapperWithImageLeft = styled.div`
   grid-template-rows: auto;
   position: relative;
   margin-bottom: 148px;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: auto;
+    grid-template-rows: 40% 60%;
+    margin-bottom: 48px;
+  }
 `;
 
 const SectionWrapperWithImageRight = styled.div`
@@ -75,6 +206,12 @@ const SectionWrapperWithImageRight = styled.div`
   position: relative;
   margin-bottom: 148px;
   justify-items: end;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: auto;
+    grid-template-rows: 40% 60%;
+    margin-bottom: 48px;
+  }
 `;
 
 const SectionTextContent = styled.div`
@@ -118,6 +255,12 @@ const SectionImageGif = styled.img`
       opacity: 1;
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 80%;
+    box-shadow: ${props => (props.index % 2 === 0) ? '4px 4px 4px 0px rgb(0, 0, 0, 0.1)' : '-4px 4px 4px 0px rgb(0, 0, 0, 0.1)'};
+    transform: ${props => (props.index % 2 === 0) ? 'translateX(-15px) translateY(15px) rotate(0deg)' : 'translateX(15px) translateY(15px) rotate(0deg)'};
+  }
 `;
 
 const SectionTitle = styled.h1`
@@ -127,6 +270,10 @@ const SectionTitle = styled.h1`
   animation: appears 0.8s ease 0.8s;
   opacity: 0;
   animation-fill-mode: forwards;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 2.4rem;
+  }
 
   @keyframes appears {
     0% {
@@ -181,6 +328,13 @@ const BackgroundStyle = styled.img`
   height: 170%;
   width: 170%;
   transform: ${props => (props.index % 2 === 0) ? 'rotate(180deg)' : 'none'};
+
+  @media only screen and (max-width: 768px) {
+    height: 100%;
+    width: 100%;
+    left: ${props => (props.index % 2 === 0) ? '' : '-120px'};
+    right: ${props => (props.index % 2 === 0) ? '-120px' : 'none'};
+  }
 `;
 
 class MainSections extends React.Component {
@@ -275,10 +429,40 @@ class MainSections extends React.Component {
           </Title>
           <Images>
             <ImageBox>
-              <ImgWrapper src="/images/manheim.jpg" />
+              <ImageBoxInner>
+                <ImageBoxInnerFront>
+                  <ImgWrapper src="/images/manheim.jpg" />
+                </ImageBoxInnerFront>
+                <ImageBoxInnerBack>
+                  <ImageBackTitle>
+                    <img src="/images/manheim-logotype.gif" />
+                    {/* <span>Manheim</span> */}
+                  </ImageBackTitle>
+                  <ImageBackText>
+                    <span>
+                      Loremp ipsum manh aqui nased. Loremp ipsum manh aqui nased, Loremp ipsum manh aqui nased. Loremp ipsum manh aqui nased.
+                    </span>
+                  </ImageBackText>
+                </ImageBoxInnerBack>
+              </ImageBoxInner>
             </ImageBox>
             <ImageBox>
-              <ImgWrapper src="/images/adesa.gif" />
+              <ImageBoxInner>
+                <ImageBoxInnerFront>
+                  <ImageWrapperAdesa src="/images/adesa.gif" />
+                </ImageBoxInnerFront>
+                <ImageBoxInnerBack>
+                  <ImageBackTitle>
+                    <img src="/images/adesa-logotype.jpg" />
+                    {/* <span>Adesa</span> */}
+                  </ImageBackTitle>
+                  <ImageBackText>
+                    <span>
+                      Loremp ipsum manh aqui nased. Loremp ipsum manh aqui nased, Loremp ipsum manh aqui nased. Loremp ipsum manh aqui nased.
+                    </span>
+                  </ImageBackText>
+                </ImageBoxInnerBack>
+              </ImageBoxInner>
             </ImageBox>
           </Images>
         </Img>

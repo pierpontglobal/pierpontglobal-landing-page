@@ -9,6 +9,13 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 32px;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+  }
 `;
 
 const Brand = styled.div`
@@ -25,6 +32,15 @@ const Brand = styled.div`
     filter: grayscale(100%);
     opacity: 0.4;
     transition: all 0.4s;
+  }
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
   }
 `;
 
