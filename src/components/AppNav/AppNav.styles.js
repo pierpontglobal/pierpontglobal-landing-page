@@ -8,7 +8,7 @@ export const Bar = styled.div`
   top: 0;
   background-color: ${(props) => props.background};
   transition: background-color 0.4s ease;
-  z-index: 100;
+  z-index: 300;
   box-shadow: ${(props) =>
     props.background === 'transparent'
       ? 'none'
@@ -51,6 +51,6 @@ export const ItemsContainer = styled.div`
   position: absolute;
   left: 0;
   right: 0;
-  max-width: 1040px;
+  max-width: 1190px;
   padding: 0 10px;
 `;

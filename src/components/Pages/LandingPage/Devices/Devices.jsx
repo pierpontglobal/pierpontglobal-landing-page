@@ -13,24 +13,24 @@ const Devices = props => {
         src="/images/TabletView.svg"
         type={"tablet"}
       />
-      <DeviceLayout
+      {/* <DeviceLayout
         style={{ justifySelf: "start", alignSelf: "end" }}
         scale={1}
         src="/images/PhoneView.svg"
         type={"phone"}
-      />
+      /> */}
       <DeviceLayout
         style={{ justifySelf: "end", alignSelf: "start" }}
         scale={0.8}
         src="/images/PhoneView2.svg"
         type={"phone"}
       />
-      <DeviceLayout
+      {/* <DeviceLayout
         style={{ justifySelf: "start", alignSelf: "start" }}
         scale={1.3}
         src="/images/TabletView.svg"
         type={"tablet"}
-      />
+      /> */}
     </DeviceHolder>
   );
 

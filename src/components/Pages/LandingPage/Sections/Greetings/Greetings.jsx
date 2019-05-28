@@ -79,8 +79,7 @@ const Greetings = (props) => {
           <TextBody style={{marginTop: '30px'}}>
             PierpontGlobal es una plataforma que permite a los dealers de
             República Dominicana participar en las subastas organizadas por
-            Manheim. Nos encargamos de toda la logística necesaria para que su
-            automobil llegue desde la subasta hasta el puerto.
+            Manheim.
           </TextBody>
 
           <div>

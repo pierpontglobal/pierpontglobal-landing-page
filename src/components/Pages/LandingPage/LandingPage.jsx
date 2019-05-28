@@ -2,7 +2,8 @@ import React from "react";
 import Greetings from "./Sections/Greetings/Greetings";
 import WhatWeDo from "./Sections/WhatWeDo/WhatWeDo";
 import Devices from "./Devices/Devices";
-// import { Test } from "./LandingPage.styles";
+import MainSections from "./Sections/MainSections/MainSections";
+import Footer from "./Sections/Footer/Footer";
 
 const LandingPage = props => (
   <div
@@ -10,9 +11,11 @@ const LandingPage = props => (
     style={{ overflow: "hidden", position: "relative" }}
   >
     <Greetings />
-    <WhatWeDo />
     <Devices />
+    <MainSections />
+    <Footer />
   </div>
 );
+
 
 export default LandingPage;
