@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   align-items: center;
   height: 100%;
   flex-direction: row;
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 768px) {
     flex-direction: column;
   }
 `;
@@ -20,7 +20,7 @@ export const MainBox = styled.div`
   color: black;
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
   border-radius: 5px 5px 5px 5px;
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 768px) {
     width: 85%;
   }
 `;
@@ -28,8 +28,8 @@ export const MainBox = styled.div`
 export const Title = styled.div`
   text-align: center;
   padding: 32px;
-  color: ${(props) => props.color};
-  border-bottom: solid 2px ${(props) => props.color}10;
+  color: ${props => props.color};
+  border-bottom: solid 2px ${props => props.color}10;
   font-size: 16px;
   font-weight: 400;
 `;
@@ -43,7 +43,7 @@ export const SecondaryBox = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 0 5px 5px 0;
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 768px) {
     width: 75%;
     border-radius: 0 0 5px 5px;
   }
@@ -107,7 +107,7 @@ export const SubtitleText = styled.div`
   font-weight: 400;
   font-size: 14px;
   font-style: italic;
-  color: ${(props) => props.color || 'gray'};
+  color: ${props => props.color || "gray"};
 `;
 
 export const Features = styled.div`
