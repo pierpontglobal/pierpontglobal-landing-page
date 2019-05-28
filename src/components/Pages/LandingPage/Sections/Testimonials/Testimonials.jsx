@@ -17,7 +17,14 @@ const SectionTitle = styled.div`
   & > span {
     font-size: 2.5rem;
     font-weight: 200;
-    color: rgb(0, 0, 0, 0.75)
+    color: rgb(0, 0, 0, 0.75);
+  }
+  
+  @media only screen and (max-width: 768px) {
+    & > span {
+      font-size: 1.8rem;
+    }
+    margin-bottom: 24px;
   }
 `;
 
@@ -26,6 +33,13 @@ const Cards = styled.div`
   height: auto;
   display: flex;
   justify-content: space-between;
+  box-sizing: border-box;
+  padding: 16px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+  } 
 `;
 
 const Card = styled.div`
@@ -36,6 +50,11 @@ const Card = styled.div`
   grid-template-rows: 45% 55%;
   box-sizing: border-box;
   background: ${props => (props.id % 2 !== 0) ? 'radial-gradient(farthest-corner at 40px 40px, #7358ff 15%, #7bdff2 100%)' : ''};
+  margin: 8px;
+
+  @media only screen and (max-width: 768px) {
+    height: auto;
+  }
 `;
 
 const CardHeader = styled.div`

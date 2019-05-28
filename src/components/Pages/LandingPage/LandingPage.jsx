@@ -15,6 +15,11 @@ const BrandsWrapper = styled.div`
   margin-bottom: 102px;
   margin-left: auto;
   margin-right: auto;
+  @media only screen and (max-width: 768px) {
+    width: 80%;
+    margin-top: 80px;
+    margin-bottom: 0px;
+  }
 `;
 
 const TestimonialsWrapper = styled.div`
@@ -24,6 +29,12 @@ const TestimonialsWrapper = styled.div`
   margin-bottom: 102px;
   margin-left: auto;
   margin-right: auto;
+  
+  @media only screen and (max-width: 768px) {
+    margin-top: 102px;
+    margin-bottom: 16px;
+    width: 100%;
+  }
 `;
 
 const LandingPage = (props) => {
