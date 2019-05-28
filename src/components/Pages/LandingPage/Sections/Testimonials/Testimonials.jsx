@@ -191,13 +191,12 @@ class Testimonials extends React.Component {
     if (canExecute) {
 
       // Animate cards to exit
-
       const cards = document.querySelectorAll('#showing-card');
-
       cards.forEach(card => {
         card.style.animation = "remove-card 0.8s";
       });
       
+      // After exit animation.. Show the next ones
       setTimeout(() => {
         let testimonials = [...this.state.testimonials];
 
