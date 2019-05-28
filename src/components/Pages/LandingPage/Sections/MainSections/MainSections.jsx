@@ -82,9 +82,11 @@ const SectionTextContent = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   position: relative;
   align-items: ${props => (props.index % 2 === 0) ? 'flex-end' : 'flex-start'};
+  margin-left: ${props => (props.index % 2 === 0) ? '0px' : '64px'};
+  margin-right: ${props => (props.index % 2 === 0) ? '64px' : '0px'};
 `;
 
 const SectionImage = styled.div`
@@ -99,11 +101,11 @@ const SectionImage = styled.div`
 `;
 
 const SectionImageGif = styled.img`
-  width: 80%;
+  width: 100%;
   height: auto;
   z-index: 200;
   opacity: 0;
-  transform: ${props => (props.index % 2 === 0) ? 'translateX(-45px) translateY(35px) rotate(9deg)' : 'translateX(45px) translateY(55px) rotate(-9deg)'};
+  transform: ${props => (props.index % 2 === 0) ? 'translateX(-45px) translateY(35px) rotate(0deg)' : 'translateX(45px) translateY(55px) rotate(0deg)'};
   box-shadow: ${props => (props.index % 2 === 0) ? '48px 48px 16px 0px rgb(0, 0, 0, 0.1)' : '-48px 48px 16px 0px rgb(0, 0, 0, 0.1)'};
   animation: appears 1s ease-in-out;
   -webkit-animation-fill-mode: forwards;
