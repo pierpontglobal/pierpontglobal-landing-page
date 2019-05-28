@@ -32,7 +32,7 @@ const Cards = styled.div`
   width: 70%;
   height: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   box-sizing: border-box;
   padding: 16px;
 
@@ -150,41 +150,67 @@ const UserRole = styled.div`
 `;
 
 class Testimonials extends React.Component {
-  state = {
-    testimonials: [
-      {
-        id: 1,
-        show: true,
-        name: 'Jhon Doe',
-        role: 'Car dealership owner',
-        picture: '/images/smaple-user-1.png',
-        message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
-      },
-      {
-        id: 2,
-        show: true,
-        name: 'Pedro Almonte',
-        role: 'Car dealership owner',
-        picture: '/images/sample-user-2.jpg',
-        message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
-      },
-      {
-        id: 3,
-        show: false,
-        name: 'Marcos Berroa',
-        role: 'Car dealership owner',
-        picture: '/images/sample-user-3.jpeg',
-        message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
-      },
-      {
-        id: 4,
-        show: false,
-        name: 'Jose y Carlos Santana',
-        role: 'Car dealership owner',
-        picture: '/images/sample-user-4.jpg',
-        message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
-      },
-    ],
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      testimonials: [
+        {
+          id: 1,
+          show: true,
+          name: 'Jhon Doe',
+          role: 'Car dealership owner',
+          picture: '/images/smaple-user-1.png',
+          message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
+        },
+        {
+          id: 2,
+          show: false,
+          name: 'Pedro Almonte',
+          role: 'Car dealership owner',
+          picture: '/images/sample-user-2.jpg',
+          message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
+        },
+        {
+          id: 3,
+          show: false,
+          name: 'Marcos Berroa',
+          role: 'Car dealership owner',
+          picture: '/images/sample-user-3.jpeg',
+          message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
+        },
+        {
+          id: 4,
+          show: false,
+          name: 'Jose y Carlos Santana',
+          role: 'Car dealership owner',
+          picture: '/images/sample-user-4.jpg',
+          message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
+        },
+      ],
+      indicators: [],
+    };
+    this.quantityToShow = 1;
+  }
+
+  componentDidMount = () => {
+    const { testimonials } = this.state;
+
+    const howManyIndicators = Math.floor(testimonials.length / this.quantityToShow);
+    
+    let indicators = [];
+    // Create indicators
+    for(let i = 0; i < howManyIndicators; i++) {
+      indicators.push({
+        active: false,
+        test: null,
+      });
+    }
+    indicators[0].active = true;
+
+    this.setState({
+      indicators
+    });
   }
 
   nextTestimonials = (canExecute, indicatorIndex) => {
@@ -199,50 +225,47 @@ class Testimonials extends React.Component {
       // After exit animation.. Show the next ones
       setTimeout(() => {
         let testimonials = [...this.state.testimonials];
+        let indicators = [...this.state.indicators];
 
         // Reset
         testimonials.forEach(t => {
           t.show = false;
         });
+        indicators.forEach(i => {
+          i.active = false;
+        })
+
+        // Calculate active indicator
+        let loopTimes = indicatorIndex;
+        let startGroupLoop = this.quantityToShow;
+        let activeIndex = 0;
+        for(let i = 0; i < loopTimes; i++) {
+          activeIndex = Math.abs(this.quantityToShow - startGroupLoop);
+          startGroupLoop++;
+        }
+        indicators[activeIndex].active = true;
 
         // Calculate next group
-        let nextGroup = indicatorIndex * 2;
+        let nextGroup = indicatorIndex * this.quantityToShow;
 
-        testimonials[nextGroup - 1].show = true;
-        testimonials[nextGroup - 2].show = true;
+        if ( this.quantityToShow > 1 ) {
+          testimonials[nextGroup - 1].show = true;
+          testimonials[nextGroup - 2].show = true;
+        } else {
+          testimonials[nextGroup - 1].show = true;
+        }
 
         // Update testimonials
         this.setState({
-          testimonials
+          testimonials,
+          indicators
         });
       }, 500);
     }
   }
 
   render() {
-    const { testimonials } = this.state;
-
-    const howManyIndicators = Math.floor(testimonials.length / 2);
-
-    console.log('Indicators COUNT >>> ');
-    console.log(howManyIndicators);
-    
-    let indicators = [];
-    for(let i = 0; i < howManyIndicators; i++) {
-      const testimonial = testimonials[i + 1] || undefined;
-  
-      if (!!testimonial) {
-        indicators[i] = {
-          active: false,
-        }; 
-        if (testimonial.show) {
-          indicators[i].active = true;
-        }
-      }
-    }
-
-    console.log('Indicators >>> ');
-    console.log(indicators);
+    const { testimonials, indicators } = this.state;
 
     return (
       <Wrapper>
