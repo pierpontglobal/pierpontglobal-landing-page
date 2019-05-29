@@ -47,13 +47,13 @@ const LandingPage = (props) => {
       <Greetings />
       <Devices />
       <MainSections />
+      <SubscriptionDetails />
       <BrandsWrapper>
         <Brands />
       </BrandsWrapper>
       <TestimonialsWrapper>
         <Testimonials />
       </TestimonialsWrapper>
-      <SubscriptionDetails />
       <Footer />
     </div>
   );
