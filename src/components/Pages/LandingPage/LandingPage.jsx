@@ -12,8 +12,8 @@ import SubscriptionDetails from './Sections/SubscriptionDetails/SubscriptionDeta
 const BrandsWrapper = styled.div`
   width: 70%;
   height: auto;
-  margin-top: 302px;
-  margin-bottom: 102px;
+  margin-top: 248px;
+  margin-bottom: 80px;
   margin-left: auto;
   margin-right: auto;
   @media only screen and (max-width: 768px) {
