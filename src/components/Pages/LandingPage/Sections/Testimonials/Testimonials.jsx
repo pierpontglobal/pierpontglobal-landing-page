@@ -16,9 +16,9 @@ const SectionTitle = styled.div`
   text-align: center;
   margin-bottom: 64px;
   & > span {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 200;
-    color: rgb(0, 0, 0, 0.75);
+    color: rgb(0, 0, 0, 1);
   }
   
   @media only screen and (max-width: 768px) {
