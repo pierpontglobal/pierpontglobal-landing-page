@@ -183,3 +183,14 @@ export const BoxButtonDark = styled.div`
     line-height: 2;
   }
 `;
+
+export const SectionTitle = styled.div`
+  width: 100%;
+  margin-top: 202px;
+  margin-bottom: 102px;
+  text-align: center;
+  & > span {
+    font-size: 2.5rem;
+    font-weight: 100;
+  }
+`;

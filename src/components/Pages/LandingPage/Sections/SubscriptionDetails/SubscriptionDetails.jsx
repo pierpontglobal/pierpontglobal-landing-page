@@ -15,12 +15,18 @@ import {
   BoxButton,
   BoxButtonDark,
   FeaturesBox,
+  SectionTitle,
 } from './SubscriptionDetails.styles';
 // import { Test } from './SubscriptionDetails.styles';
 
 const SubscriptionDetails = (props) => {
   return (
     <Section style={{height: 'auto'}}>
+      <SectionTitle>
+        <span>
+          Simple and transparent pricing
+        </span>
+      </SectionTitle>
       <Wrapper>
         <MainBox>
           <Title color="#173753">PPG USA ACCESS</Title>

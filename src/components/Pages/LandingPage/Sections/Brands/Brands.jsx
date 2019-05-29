@@ -59,6 +59,12 @@ const Brands = (props) => {
       <Brand>
         <img src="/images/stripe.png" />
       </Brand>
+      <Brand>
+        <img src="/images/banreservas.png" />
+      </Brand>
+      <Brand>
+        <img src="/images/stripe.png" />
+      </Brand>
     </Wrapper>
   );
 };

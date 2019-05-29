@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import SubscriptionDetails from './Sections/SubscriptionDetails/SubscriptionDetails';
 
 const BrandsWrapper = styled.div`
-  width: 50%;
+  width: 70%;
   height: auto;
   margin-top: 302px;
   margin-bottom: 102px;
