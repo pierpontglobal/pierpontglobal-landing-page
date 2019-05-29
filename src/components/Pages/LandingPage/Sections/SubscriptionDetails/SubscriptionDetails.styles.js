@@ -20,6 +20,8 @@ export const MainBox = styled.div`
   color: black;
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
   border-radius: 5px 5px 5px 5px;
+  z-index: 200;
+
   @media only screen and (max-width: 768px) {
     width: 85%;
   }
@@ -45,9 +47,23 @@ export const SecondaryBox = styled.div`
   flex-direction: column;
   border-radius: 0 5px 5px 0;
   overflow: hidden;
+  animation: appears-secondary-box 0.75s ease-in-out;
+  z-index: 100;
+
   @media only screen and (max-width: 768px) {
     width: 75%;
     border-radius: 0 0 5px 5px;
+  }
+
+  @keyframes appears-secondary-box {
+    0% {
+      opacity: 0;
+      transform: translateX(-220px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
   }
 `;
 
@@ -190,7 +206,7 @@ export const SectionTitle = styled.div`
   margin-bottom: 102px;
   text-align: center;
   & > span {
-    font-size: 2.5rem;
-    font-weight: 100;
+    font-size: 3.0rem;
+    font-weight: 200;
   }
 `;
