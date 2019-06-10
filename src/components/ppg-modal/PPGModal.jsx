@@ -69,10 +69,10 @@ class PPGModal extends React.Component {
                       <IconButton onClick={this.props.onBackAction}>
                         <ArrowBackIcon />
                       </IconButton>
-                      ) 
+                      )
                     : null
                   }
-              ``</div>
+                </div>
                 <div style={{ position: 'absolute', top: '5px', right: '5px' }}>
                   <IconButton onClick={this.props.handleClose}>
                     <Close />

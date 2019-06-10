@@ -54,16 +54,13 @@ const Brands = (props) => {
         <img src="/images/stripe.png" />
       </Brand>
       <Brand>
-        <img src="/images/banreservas.png" />
+        <img src="/images/netlify-logo.png" />
       </Brand>
       <Brand>
-        <img src="/images/stripe.png" />
+        <img src="/images/sendgrid-logo.png" />
       </Brand>
       <Brand>
-        <img src="/images/banreservas.png" />
-      </Brand>
-      <Brand>
-        <img src="/images/stripe.png" />
+        <img src="/images/aws-logo.png" />
       </Brand>
     </Wrapper>
   );
