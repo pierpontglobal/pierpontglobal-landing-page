@@ -44,6 +44,9 @@ const FooterSections = styled.div`
   display: flex;
   flex-direction: row;
   padding-bottom: 64px;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 16px;
 
   @media only screen and (max-width: 768px) {
     flex-direction: column;
@@ -307,7 +310,7 @@ class Footer extends React.Component {
                 </SocialLink>
               </SocialLinks>
             </LogoSection>
-            <CoreLinksSection>
+            {/* <CoreLinksSection>
               <SectionTitle>
                 <span>
                   Core Link
@@ -378,7 +381,7 @@ class Footer extends React.Component {
                   <span>About Company</span>
                 </SectionLink>
               </SectionLinks>
-            </AboutCompnaySection>
+            </AboutCompnaySection> */}
           </FooterSections>
           
           <FooterBottom>

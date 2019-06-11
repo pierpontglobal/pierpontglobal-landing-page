@@ -134,10 +134,14 @@ class Greetings extends React.Component {
     
               <div>
                 <AccentButton style={{margin: '20px 20px 10px 0'}}>
-                  Create account
+                  <span>
+                    Create account
+                  </span>
                 </AccentButton>
                 <LightButton style={{margin: '20px 20px 10px 0'}} onClick={() => this.togglePromoVideo(true)}>
-                  View promotion
+                  <span>
+                    View promotion
+                  </span>
                 </LightButton>
               </div>
             </Text>

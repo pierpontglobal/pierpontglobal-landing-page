@@ -8,6 +8,7 @@ import Brands from './Sections/Brands/Brands';
 import Testimonials from './Sections/Testimonials/Testimonials';
 import styled from 'styled-components';
 import SubscriptionDetails from './Sections/SubscriptionDetails/SubscriptionDetails';
+import ArrowIndicator from '../../ArrowIndicator/ArrowIndicator';
 
 const BrandsWrapper = styled.div`
   width: 70%;
@@ -49,11 +50,14 @@ const TestimonialsWrapper = styled.div`
   }
 `;
 
+
+let landingRef = React.createRef();
 const LandingPage = (props) => {
   return (
     <div
       className="LandingPageWrapper"
       style={{overflow: 'hidden', position: 'relative'}}
+      ref={landingRef}
     >
       <Greetings />
       <Devices />
@@ -71,6 +75,7 @@ const LandingPage = (props) => {
         <Testimonials />
       </TestimonialsWrapper>
       <Footer />
+      <ArrowIndicator landingRef={landingRef} />
     </div>
   );
 };
