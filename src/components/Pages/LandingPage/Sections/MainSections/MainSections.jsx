@@ -321,7 +321,7 @@ const SectionParagraph = styled.div`
 const BackgroundStyle = styled.img`
   position: absolute;
   top: 0;
-  left: ${props => (props.index % 2 === 0) ? '' : '-220px'};
+  left: ${props => (props.index % 2 === 0) ? '' : '-260px'};
   right: ${props => (props.index % 2 === 0) ? '-220px' : 'none'};
   z-index: 100;
   opacity: 0.1;
