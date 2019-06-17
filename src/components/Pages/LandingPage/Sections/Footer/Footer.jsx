@@ -296,16 +296,16 @@ class Footer extends React.Component {
             <LogoSection>
               <LogoWrapper src="/logos/light.png" />
               <SocialLinks>
-                <SocialLink>
+                <SocialLink onClick={() => window.location.href = 'https://www.facebook.com/Pierpont-Global-1900340546940761/' }>
                   <i class="fab fa-facebook"></i>
                 </SocialLink>
-                <SocialLink>
+                <SocialLink onClick={() => window.location.href = 'https://www.instagram.com/pierpontglobalrd/' }>
                   <i class="fab fa-instagram"></i>
                 </SocialLink>
-                <SocialLink>
+                <SocialLink onClick={() => window.location = 'mailto:support@pierpontglobal.com' }>
                   <i class="fas fa-envelope"></i>
                 </SocialLink>
-                <SocialLink>
+                <SocialLink onClick={() => window.location.href = 'https://github.com/pierpontglobal' }>
                   <i class="fab fa-github"></i>
                 </SocialLink>
               </SocialLinks>
