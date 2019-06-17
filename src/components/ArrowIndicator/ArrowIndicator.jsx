@@ -22,12 +22,12 @@ const ArrowAnim = () => {
 const ArrowIconWrapper = styled.div`
   animation: ${props => props.bottomReached ? 'none' : css`${ArrowAnim} 2s ease-in-out 1s infinite`};
   animation-fill-mode: forwards;
-  opacity: 0.7;
+  opacity: ${props => props.bottomReached ? '1' : '0.7'};
   cursor: pointer;
   
   & > svg {
     font-size: 2.5rem !important;
-    color: ${props => props.bottomReached ? '#2769eb' : '#3a3e43'};
+    color: ${props => props.bottomReached ? 'white' : '#3a3e43'};
     transition: all .3s !important;
     transform: ${props => props.bottomReached ? 'rotate(-180deg)' : 'rotate(0deg)'} !important;
   }
