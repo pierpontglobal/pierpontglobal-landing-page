@@ -180,7 +180,7 @@ const SocialLinks = styled.div`
 `;
 
 const SocialLink = styled.div`
-  margin: 8px;
+  margin: 8px 16px;
   &:hover {
     cursor: pointer;
     & > svg {
@@ -305,9 +305,9 @@ class Footer extends React.Component {
                 <SocialLink onClick={() => window.location = 'mailto:support@pierpontglobal.com' }>
                   <i class="fas fa-envelope"></i>
                 </SocialLink>
-                <SocialLink onClick={() => window.location.href = 'https://github.com/pierpontglobal' }>
+                {/* <SocialLink onClick={() => window.location.href = 'https://github.com/pierpontglobal' }>
                   <i class="fab fa-github"></i>
-                </SocialLink>
+                </SocialLink> */}
               </SocialLinks>
             </LogoSection>
             {/* <CoreLinksSection>
