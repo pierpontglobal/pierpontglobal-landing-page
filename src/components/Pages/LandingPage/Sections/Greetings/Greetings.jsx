@@ -81,7 +81,7 @@ class Greetings extends React.Component {
                 width: '25%',
                 height: '20vh',
                 opacity: '0.3',
-                background: '#45B7E5',
+                background: '#62fbfc',
               }}
             />
             <StripeNode
@@ -90,7 +90,7 @@ class Greetings extends React.Component {
                 width: '20%',
                 height: '20vh',
                 opacity: '0.1',
-                background: '#05D5FF',
+                background: '#37fbfb',
               }}
             />
             <StripeNode
@@ -99,7 +99,7 @@ class Greetings extends React.Component {
                 width: '15%',
                 height: '20vh',
                 opacity: '0.1',
-                background: '#575D90',
+                background: '#1efafa',
               }}
             />
             <StripeNode
@@ -109,7 +109,7 @@ class Greetings extends React.Component {
                 width: '15%',
                 height: '20vh',
                 opacity: '0.4',
-                background: '#C1F0DA',
+                background: '#05fafa',
               }}
             />
             <StripeNode
@@ -119,7 +119,7 @@ class Greetings extends React.Component {
                 width: '15%',
                 height: '20vh',
                 opacity: '0.4',
-                background: '#C1F0DA',
+                background: '#05e1e1',
               }}
             />
           </Stripes>

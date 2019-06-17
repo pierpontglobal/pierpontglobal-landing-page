@@ -90,7 +90,7 @@ const AppNav = (props) => {
     : usefulLinksDesktop;
 
   return (
-    <Bar background={color}>
+    <Bar background={color} id="navbar">
       <ItemsContainer>
         <Logo src={logo} />
         <UsefulLinks>{usefulLinksContent}</UsefulLinks>

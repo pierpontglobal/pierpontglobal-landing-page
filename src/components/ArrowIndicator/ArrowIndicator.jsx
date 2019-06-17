@@ -23,10 +23,11 @@ const ArrowIconWrapper = styled.div`
   animation: ${props => props.bottomReached ? 'none' : css`${ArrowAnim} 2s ease-in-out 1s infinite`};
   animation-fill-mode: forwards;
   opacity: 0.7;
+  cursor: pointer;
   
   & > svg {
     font-size: 2.5rem !important;
-    color: black;
+    color: ${props => props.bottomReached ? '#2769eb' : '#3a3e43'};
     transition: all .3s !important;
     transform: ${props => props.bottomReached ? 'rotate(-180deg)' : 'rotate(0deg)'} !important;
   }
@@ -38,6 +39,7 @@ const ArrowIconWrapper = styled.div`
 
 const Wrapper = styled.div`
   position: fixed;
+  z-index: 200;
   bottom: 16px;
   right: 24px;
   padding: 8px;
@@ -72,11 +74,20 @@ class ArrowIndicator extends React.Component {
     })
   }
 
+  scrollTo = (bottomReached) => {
+    const { landingRef } = this.props
+    if (bottomReached) {
+      window.scrollTo(0, 0);
+    } else {
+      window.scrollTo(0, landingRef.current.scrollHeight);
+    }
+  }
+
   render() {
     const  { bottomReached } = this.state;
     return (
       <Wrapper>
-        <ArrowIconWrapper bottomReached={bottomReached}>
+        <ArrowIconWrapper onClick={() => this.scrollTo(bottomReached)} bottomReached={bottomReached}>
           <ArrowIconMui />
         </ArrowIconWrapper>
       </Wrapper>

@@ -14,7 +14,7 @@ import { defaultTheme, defaultColor } from "./Defaults";
  */
 function App() {
   return (
-    <div className="App">
+    <div className="App" id="app">
       <MuiThemeProvider theme={defaultTheme}>
         <Router>
           <AppNav color={defaultColor("secondary")} />

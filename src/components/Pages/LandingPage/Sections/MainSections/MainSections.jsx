@@ -318,15 +318,15 @@ const SectionParagraph = styled.div`
   }
 `;
 
-const BackgroundStyle = styled.img`
+const BackgroundStyle = styled.object`
   position: absolute;
+  z-index: 100;
+  opacity: 0.44;
+  height: 170%;
+  width: 170%;
   top: 0;
   left: ${props => (props.index % 2 === 0) ? '' : '-260px'};
   right: ${props => (props.index % 2 === 0) ? '-220px' : 'none'};
-  z-index: 100;
-  opacity: 0.1;
-  height: 170%;
-  width: 170%;
   transform: ${props => (props.index % 2 === 0) ? 'rotate(180deg)' : 'none'};
 
   @media only screen and (max-width: 768px) {
@@ -472,7 +472,7 @@ class MainSections extends React.Component {
             {
               !sections[0].showTitle ? null : (<SectionImageGif index={1} src="/gifs/search-listings-slower.gif" />)
             }
-            <BackgroundStyle index={1} src="/images/background-style-colored.svg" />
+            <BackgroundStyle type="image/svg+xml" index={1} data="/images/background-style-colored-new.svg" />
           </SectionImage>
           <SectionTextContent index={1}>
             {
@@ -512,7 +512,7 @@ class MainSections extends React.Component {
             {
               !sections[1].showTitle ? null : (<SectionImageGif index={2} src="/gifs/place-bids.gif" />)
             }
-            <BackgroundStyle index={2} src="/images/background-style-colored.svg" />
+            <BackgroundStyle type="image/svg+xml" index={2} data="/images/background-style-colored-new.svg" />
           </SectionImage>
         </SectionWrapperWithImageRight>
         {/* <SectionWrapperWithImageLeft id="delivery-section">

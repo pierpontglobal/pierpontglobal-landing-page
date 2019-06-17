@@ -14,11 +14,11 @@ const Background = styled.div`
   width: 100%;
   height: 100%;
   z-index: 100;
-  background: radial-gradient(farthest-corner at 40px 40px, #7bdff2 15%, #7358ff 100%);
+  background: radial-gradient(farthest-corner at 40px 40px, #2769eb 15%, #62fbfc 100%);
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.2;
+  opacity: 0.9;
 `;
 
 const UpFooterStyle = styled.img`
@@ -113,7 +113,7 @@ const AboutCompnaySection = styled(Section)`
 `;
 
 const LogoWrapper = styled.img`
-  width: 220px;
+  width: 320px;
   height: auto;
   background-size: cover;
 `;
@@ -266,12 +266,12 @@ const ActionButton = styled.div`
 
   &:hover {
     & > span {
-      color: rgb(115, 88, 255, 1);
+      color: rgb(39, 105, 235, 1);
     }
     box-shadow: 0px 4px 32px 12px rgb(0, 0, 0, 0.17);
   }
   & > span {
-    color: rgb(115, 88, 255, 0.60);
+    color: rgb(39, 105, 235, 0.60);
     font-weight: 600;
     transition: all 0.4s;
   }
@@ -288,13 +288,13 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <Wrapper>
+      <Wrapper id="footer">
         <Background />
         {/* <UpFooterStyle src="/images/up-footer-style.svg" /> */}
         <FooterContent>
           <FooterSections>
             <LogoSection>
-              <LogoWrapper src="/logos/dark.png" />
+              <LogoWrapper src="/logos/light.png" />
               <SocialLinks>
                 <SocialLink>
                   <i class="fab fa-facebook"></i>

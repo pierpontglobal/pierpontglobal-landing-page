@@ -9,7 +9,7 @@ export const Stripes = styled.div`
   transform-origin: 0;
   -webkit-transform: skewY(-12deg);
   -webkit-transform-origin: 0;
-  background: linear-gradient(150deg, #7358ff 15%, #7bdff2 70%, #b4edd2 94%);
+  background: linear-gradient(150deg, #2769eb 40%, #62fbfc 94%);
 `;
 
 export const StripeNode = styled.div`

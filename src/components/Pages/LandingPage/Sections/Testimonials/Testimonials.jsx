@@ -58,7 +58,7 @@ const Card = styled.div`
   display: grid;
   grid-template-rows: 45% 55%;
   box-sizing: border-box;
-  background: ${props => (props.cardId % 2 !== 0) ? 'radial-gradient(farthest-corner at 40px 40px, #7358ff 15%, #7bdff2 100%)' : ''};
+  background: ${props => (props.cardId % 2 !== 0) ? 'radial-gradient(farthest-corner at 40px 40px, #2769eb 15%, #62fbfc 100%)' : ''};
   margin: 8px;
 
   @keyframes remove-card {
