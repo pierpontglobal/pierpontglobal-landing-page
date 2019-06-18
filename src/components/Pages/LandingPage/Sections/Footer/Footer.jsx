@@ -14,11 +14,11 @@ const Background = styled.div`
   width: 100%;
   height: 100%;
   z-index: 100;
-  background: radial-gradient(farthest-corner at 40px 40px, #2769eb 15%, #62fbfc 100%);
+  background: radial-gradient(farthest-corner at 40px 40px, #05e1e1 15%, #2769eb 100%);
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.9;
+  opacity: 0.3;
 `;
 
 const UpFooterStyle = styled.img`
@@ -116,6 +116,7 @@ const LogoWrapper = styled.img`
   width: 320px;
   height: auto;
   background-size: cover;
+  filter: brightness(1.6);
 `;
 
 const SectionTitle = styled.div`
@@ -294,7 +295,7 @@ class Footer extends React.Component {
         <FooterContent>
           <FooterSections>
             <LogoSection>
-              <LogoWrapper src="/logos/light.png" />
+              <LogoWrapper src="/logos/dark.png" />
               <SocialLinks>
                 <SocialLink onClick={() => window.location.href = 'https://www.facebook.com/Pierpont-Global-1900340546940761/' }>
                   <i class="fab fa-facebook"></i>

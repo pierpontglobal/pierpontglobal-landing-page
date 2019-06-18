@@ -321,7 +321,7 @@ const SectionParagraph = styled.div`
 const BackgroundStyle = styled.object`
   position: absolute;
   z-index: 100;
-  opacity: 0.44;
+  opacity: 0.2;
   height: 170%;
   width: 170%;
   top: 0;
