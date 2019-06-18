@@ -27,7 +27,7 @@ const Brand = styled.div`
       filter: grayscale(20%);
       opacity: 0.8;
     }
-    width: 120px;
+    width: ${ (props) => (!!props.small ? '80px' : '120px')};
     height: auto;
     filter: grayscale(100%);
     opacity: 0.4;
@@ -50,8 +50,8 @@ const Brands = (props) => {
       <Brand>
         <img src="/images/banreservas.png" />
       </Brand>
-      <Brand>
-        <img src="/images/stripe.png" />
+      <Brand small>
+        <img src="/images/us-embassy-logo.png" />
       </Brand>
       <Brand>
         <img src="/images/netlify-logo.png" />
@@ -59,9 +59,9 @@ const Brands = (props) => {
       <Brand>
         <img src="/images/sendgrid-logo.png" />
       </Brand>
-      <Brand>
+      {/* <Brand>
         <img src="/images/aws-logo.png" />
-      </Brand>
+      </Brand> */}
     </Wrapper>
   );
 };

@@ -42,6 +42,10 @@ const Cards = styled.div`
     flex-direction: column;
   } 
 
+  @media only screen and (max-width: 1200px) and (min-width: 1104px) {
+    width: 85%
+  }
+
   @media only screen and (max-width: 1104px) and (min-width: 960px) {
     width: 85%
   }
