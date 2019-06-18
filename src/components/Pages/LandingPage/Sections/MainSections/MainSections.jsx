@@ -37,7 +37,7 @@ const Img = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 84px;
-  margin-bottom: 148px;
+  margin-bottom: 54px;
   @media only screen and (max-width: 768px) {
     margin-top: 8px;
     margin-bottom: 48px;
