@@ -545,6 +545,11 @@ class MainSections extends React.Component {
                     <span>
                       ADESA provides wholesale vehicle auction solutions to professional car buyers and sellers. Associated with the best partners in the auto remarketing industry to ensure you get the best experience and services out there.
                     </span>
+                    <div style={{ marginTop: '12px', width: '100%', textAlign: 'center' }}>
+                      <span style={{ fontWeight: '600', color: '#068a97' }}>
+                        COMING SOON
+                      </span>
+                    </div>
                   </ImageBackText>
                 </ImageBoxInnerBack>
               </ImageBoxInner>
