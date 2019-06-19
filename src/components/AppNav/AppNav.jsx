@@ -29,7 +29,7 @@ const AppNav = (props) => {
     <>
       <Link to="/support">
         <BasicChangeableButton textColor={'#3A3E43'}>
-          Support
+          Help
         </BasicChangeableButton>
       </Link>
       <a href="https://app.pierpontglobal.com/?signIn=true">
@@ -44,7 +44,7 @@ const AppNav = (props) => {
     <>
       <Link to="/support">
         <BasicChangeableButton textColor={textColor}>
-          Support
+          Help
         </BasicChangeableButton>
       </Link>
       <a href="https://app.pierpontglobal.com">
