@@ -16,9 +16,9 @@ const SectionTitle = styled.div`
   text-align: center;
   margin-bottom: 64px;
   & > span {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 200;
-    color: rgb(0, 0, 0, 0.75);
+    color: rgb(0, 0, 0, 1);
   }
   
   @media only screen and (max-width: 768px) {
@@ -42,6 +42,10 @@ const Cards = styled.div`
     flex-direction: column;
   } 
 
+  @media only screen and (max-width: 1200px) and (min-width: 1104px) {
+    width: 85%
+  }
+
   @media only screen and (max-width: 1104px) and (min-width: 960px) {
     width: 85%
   }
@@ -58,7 +62,7 @@ const Card = styled.div`
   display: grid;
   grid-template-rows: 45% 55%;
   box-sizing: border-box;
-  background: ${props => (props.cardId % 2 !== 0) ? 'radial-gradient(farthest-corner at 40px 40px, #7358ff 15%, #7bdff2 100%)' : ''};
+  background: ${props => (props.cardId % 2 !== 0) ? 'radial-gradient(farthest-corner at 40px 40px, rgba(39, 105, 235, 0.7) 15%, rgba(98, 251, 252, 0.8) 100%)' : ''};
   margin: 8px;
 
   @keyframes remove-card {
@@ -80,7 +84,7 @@ const Card = styled.div`
 `;
 
 const CardHeader = styled.div`
-  width: 65%;
+  width: 100%;
   height: 100%;
   padding: 16px 4px;
   box-sizing: border-box;
@@ -126,10 +130,10 @@ const Indicator = styled.div`
 `;
 
 const UserPhoto = styled.img`
-  width: 95px;
-  height: 95px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  box-shadow: 0px 0px 8px 0px rgb(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 8px 0px rgb(0, 0, 0, 0.08);
 `;
 
 const UserName = styled.div`

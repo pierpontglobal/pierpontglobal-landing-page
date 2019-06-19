@@ -37,7 +37,7 @@ const Img = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 84px;
-  margin-bottom: 148px;
+  margin-bottom: 54px;
   @media only screen and (max-width: 768px) {
     margin-top: 8px;
     margin-bottom: 48px;
@@ -243,7 +243,7 @@ const SectionImageGif = styled.img`
   z-index: 200;
   opacity: 0;
   transform: ${props => (props.index % 2 === 0) ? 'translateX(-45px) translateY(35px) rotate(0deg)' : 'translateX(45px) translateY(55px) rotate(0deg)'};
-  box-shadow: ${props => (props.index % 2 === 0) ? '48px 48px 16px 0px rgb(0, 0, 0, 0.1)' : '-48px 48px 16px 0px rgb(0, 0, 0, 0.1)'};
+  box-shadow: ${props => (props.index % 2 === 0) ? '24px 24px 12px 0px rgb(0, 0, 0, 0.1)' : '-24px 24px 12px 0px rgb(0, 0, 0, 0.1)'};
   animation: appears 1s ease-in-out;
   -webkit-animation-fill-mode: forwards;
   
@@ -318,15 +318,15 @@ const SectionParagraph = styled.div`
   }
 `;
 
-const BackgroundStyle = styled.img`
+const BackgroundStyle = styled.object`
   position: absolute;
-  top: 0;
-  left: ${props => (props.index % 2 === 0) ? '' : '-220px'};
-  right: ${props => (props.index % 2 === 0) ? '-220px' : 'none'};
   z-index: 100;
-  opacity: 0.1;
+  opacity: 0.2;
   height: 170%;
   width: 170%;
+  top: 0;
+  left: ${props => (props.index % 2 === 0) ? '' : '-260px'};
+  right: ${props => (props.index % 2 === 0) ? '-220px' : 'none'};
   transform: ${props => (props.index % 2 === 0) ? 'rotate(180deg)' : 'none'};
 
   @media only screen and (max-width: 768px) {
@@ -369,7 +369,7 @@ class MainSections extends React.Component {
       // To observer elements
       this.searchListingSection = document.querySelector('#search-listing-section');
       this.placeBidSection = document.querySelector('#place-bid-section');
-      this.deliverySection = document.querySelector('#delivery-section');
+      // this.deliverySection = document.querySelector('#delivery-section');
 
       // Observer configuration
       const options = {
@@ -401,21 +401,22 @@ class MainSections extends React.Component {
             }, () => {
               this.observer.unobserve(this.placeBidSection);
             })
-          } else if (entry[0].target.id === 'delivery-section') {
-            sections[2].showTitle = true;
-            this.setState({
-              sections
-            }, () => {
-              this.observer.unobserve(this.deliverySection);
-            })
-          }
+          } 
+          // else if (entry[0].target.id === 'delivery-section') {
+          //   sections[2].showTitle = true;
+          //   this.setState({
+          //     sections
+          //   }, () => {
+          //     this.observer.unobserve(this.deliverySection);
+          //   })
+          // }
         }
       }, options);
 
       // Initialize observer on elements
       this.observer.observe(this.searchListingSection);
       this.observer.observe(this.placeBidSection);
-      this.observer.observe(this.deliverySection);
+      // this.observer.observe(this.deliverySection);
     }
   }
 
@@ -440,7 +441,7 @@ class MainSections extends React.Component {
                   </ImageBackTitle>
                   <ImageBackText>
                     <span>
-                      Loremp ipsum manh aqui nased. Loremp ipsum manh aqui nased, Loremp ipsum manh aqui nased. Loremp ipsum manh aqui nased.
+                      North America’s leading provider of vehicle remarketing services, connecting buyers and sellers to the largest wholesale used vehicle marketplace and most extensive auction network.
                     </span>
                   </ImageBackText>
                 </ImageBoxInnerBack>
@@ -458,7 +459,7 @@ class MainSections extends React.Component {
                   </ImageBackTitle>
                   <ImageBackText>
                     <span>
-                      Loremp ipsum manh aqui nased. Loremp ipsum manh aqui nased, Loremp ipsum manh aqui nased. Loremp ipsum manh aqui nased.
+                      ADESA provides wholesale vehicle auction solutions to professional car buyers and sellers. Associated with the best partners in the auto remarketing industry to ensure you get the best experience and services out there.
                     </span>
                   </ImageBackText>
                 </ImageBoxInnerBack>
@@ -469,9 +470,9 @@ class MainSections extends React.Component {
         <SectionWrapperWithImageLeft id="search-listing-section">
           <SectionImage>
             {
-              !sections[0].showTitle ? null : (<SectionImageGif index={1} src="/images/mailchimp.gif" />)
+              !sections[0].showTitle ? null : (<SectionImageGif index={1} src="/gifs/search-listigns-f-2.gif" />)
             }
-            <BackgroundStyle index={1} src="/images/background-style-colored.svg" />
+            <BackgroundStyle type="image/svg+xml" index={1} data="/images/background-style-colored-new.svg" />
           </SectionImage>
           <SectionTextContent index={1}>
             {
@@ -509,12 +510,12 @@ class MainSections extends React.Component {
           </SectionTextContent>
           <SectionImage>
             {
-              !sections[1].showTitle ? null : (<SectionImageGif index={2} src="/images/mailchimp.gif" />)
+              !sections[1].showTitle ? null : (<SectionImageGif index={2} src="/gifs/place-bids-f-2.gif" />)
             }
-            <BackgroundStyle index={2} src="/images/background-style-colored.svg" />
+            <BackgroundStyle type="image/svg+xml" index={2} data="/images/background-style-colored-new.svg" />
           </SectionImage>
         </SectionWrapperWithImageRight>
-        <SectionWrapperWithImageLeft id="delivery-section">
+        {/* <SectionWrapperWithImageLeft id="delivery-section">
           <SectionImage>
           { 
               !sections[2].showTitle ? null : (<SectionImageGif index={3} src="/images/mailchimp.gif" />)
@@ -537,7 +538,7 @@ class MainSections extends React.Component {
               ) : null
             }
           </SectionTextContent>
-        </SectionWrapperWithImageLeft>
+        </SectionWrapperWithImageLeft> */}
       </Wrapper>
     );
   }

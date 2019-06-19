@@ -34,10 +34,16 @@ export const AccentButton = styled(Button)`
   height: 48px !important;
   padding: 0 30px !important;
   box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3) !important;
+  & > span {
+    font-weight: 600;
+  }
 `;
 
 export const LightButton = styled(Button)`
   background: white !important;
+  & > span {
+    font-weight: 600;
+  }
 `;
 
 export const Sections = styled.div`

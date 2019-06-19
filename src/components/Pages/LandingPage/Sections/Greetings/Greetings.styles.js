@@ -9,7 +9,7 @@ export const Stripes = styled.div`
   transform-origin: 0;
   -webkit-transform: skewY(-12deg);
   -webkit-transform-origin: 0;
-  background: linear-gradient(150deg, #7358ff 15%, #7bdff2 70%, #b4edd2 94%);
+  background: linear-gradient(150deg, #2769eb 40%, #62fbfc 94%);
 `;
 
 export const StripeNode = styled.div`
@@ -36,9 +36,21 @@ export const Text = styled.div`
   width: 85%;
   height: 75%;
   min-height: 300px;
+  position: relative;
+  z-index: 200;
 
   @media only screen and (min-width: 768px) {
     height: 55%;
     width: 70%;
   }
+`;
+
+export const WorldMap = styled.object`
+  position: absolute;
+  top: -6%;
+  left: -22%;
+  width: 90%;
+  height: 90%;
+  z-index: 100;
+  opacity: 0.04;
 `;

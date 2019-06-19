@@ -17,6 +17,7 @@ export const Bar = styled.div`
 
 export const Logo = styled.img`
   height: 100%;
+  margin-left: 8%;
 `;
 
 export const BasicChangeableButton = styled(Button)`
@@ -25,7 +26,8 @@ export const BasicChangeableButton = styled(Button)`
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
-  font-weight: 900 !important;
+  font-weight: 600 !important;
+  font-size: 1.08rem !important;
   transition: 0.4s !important;
   padding: 0 30px !important;
   :hover {
@@ -43,7 +45,7 @@ export const ItemsContainer = styled.div`
   height: calc(100% - 20px);
   height: -webkit-calc(100% - 20px);
   height: -moz-calc(100% - 20px);
-  width: 100%;
+  width: 85%;
   display: flex;
   justify-content: space-between;
   justify-items: space-between;
@@ -51,6 +53,5 @@ export const ItemsContainer = styled.div`
   position: absolute;
   left: 0;
   right: 0;
-  max-width: 1190px;
   padding: 0 10px;
 `;

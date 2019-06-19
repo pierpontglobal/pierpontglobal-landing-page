@@ -14,11 +14,11 @@ const Background = styled.div`
   width: 100%;
   height: 100%;
   z-index: 100;
-  background: radial-gradient(farthest-corner at 40px 40px, #7bdff2 15%, #7358ff 100%);
+  background: radial-gradient(farthest-corner at 40px 40px, #05e1e1 15%, #2769eb 100%);
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.2;
+  opacity: 0.3;
 `;
 
 const UpFooterStyle = styled.img`
@@ -44,6 +44,9 @@ const FooterSections = styled.div`
   display: flex;
   flex-direction: row;
   padding-bottom: 64px;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 16px;
 
   @media only screen and (max-width: 768px) {
     flex-direction: column;
@@ -110,9 +113,10 @@ const AboutCompnaySection = styled(Section)`
 `;
 
 const LogoWrapper = styled.img`
-  width: 220px;
+  width: 320px;
   height: auto;
   background-size: cover;
+  filter: brightness(1.6);
 `;
 
 const SectionTitle = styled.div`
@@ -177,7 +181,7 @@ const SocialLinks = styled.div`
 `;
 
 const SocialLink = styled.div`
-  margin: 8px;
+  margin: 8px 16px;
   &:hover {
     cursor: pointer;
     & > svg {
@@ -263,12 +267,12 @@ const ActionButton = styled.div`
 
   &:hover {
     & > span {
-      color: rgb(115, 88, 255, 1);
+      color: rgb(39, 105, 235, 1);
     }
     box-shadow: 0px 4px 32px 12px rgb(0, 0, 0, 0.17);
   }
   & > span {
-    color: rgb(115, 88, 255, 0.60);
+    color: rgb(39, 105, 235, 0.60);
     font-weight: 600;
     transition: all 0.4s;
   }
@@ -285,7 +289,7 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <Wrapper>
+      <Wrapper id="footer">
         <Background />
         {/* <UpFooterStyle src="/images/up-footer-style.svg" /> */}
         <FooterContent>
@@ -293,21 +297,21 @@ class Footer extends React.Component {
             <LogoSection>
               <LogoWrapper src="/logos/dark.png" />
               <SocialLinks>
-                <SocialLink>
+                <SocialLink onClick={() => window.location.href = 'https://www.facebook.com/Pierpont-Global-1900340546940761/' }>
                   <i class="fab fa-facebook"></i>
                 </SocialLink>
-                <SocialLink>
+                <SocialLink onClick={() => window.location.href = 'https://www.instagram.com/pierpontglobalrd/' }>
                   <i class="fab fa-instagram"></i>
                 </SocialLink>
-                <SocialLink>
+                <SocialLink onClick={() => window.location = 'mailto:support@pierpontglobal.com' }>
                   <i class="fas fa-envelope"></i>
                 </SocialLink>
-                <SocialLink>
+                {/* <SocialLink onClick={() => window.location.href = 'https://github.com/pierpontglobal' }>
                   <i class="fab fa-github"></i>
-                </SocialLink>
+                </SocialLink> */}
               </SocialLinks>
             </LogoSection>
-            <CoreLinksSection>
+            {/* <CoreLinksSection>
               <SectionTitle>
                 <span>
                   Core Link
@@ -378,7 +382,7 @@ class Footer extends React.Component {
                   <span>About Company</span>
                 </SectionLink>
               </SectionLinks>
-            </AboutCompnaySection>
+            </AboutCompnaySection> */}
           </FooterSections>
           
           <FooterBottom>

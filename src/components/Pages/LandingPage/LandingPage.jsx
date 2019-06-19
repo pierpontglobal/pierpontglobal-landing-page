@@ -8,18 +8,30 @@ import Brands from './Sections/Brands/Brands';
 import Testimonials from './Sections/Testimonials/Testimonials';
 import styled from 'styled-components';
 import SubscriptionDetails from './Sections/SubscriptionDetails/SubscriptionDetails';
+import ArrowIndicator from '../../ArrowIndicator/ArrowIndicator';
 
 const BrandsWrapper = styled.div`
-  width: 50%;
+  width: 70%;
   height: auto;
-  margin-top: 302px;
-  margin-bottom: 102px;
+  margin-top: 200px;
+  margin-bottom: 80px;
   margin-left: auto;
   margin-right: auto;
   @media only screen and (max-width: 768px) {
     width: 80%;
     margin-top: 80px;
     margin-bottom: 0px;
+  }
+`;
+
+const BrandsTitle = styled.div`
+  width: 100%;
+  margin-bottom: 98px;
+  text-align: center;
+
+  & > span {
+    font-size: 2.8rem;
+    font-weight: 200;
   }
 `;
 
@@ -38,23 +50,32 @@ const TestimonialsWrapper = styled.div`
   }
 `;
 
+
+let landingRef = React.createRef();
 const LandingPage = (props) => {
   return (
     <div
       className="LandingPageWrapper"
       style={{overflow: 'hidden', position: 'relative'}}
+      ref={landingRef}
     >
       <Greetings />
       <Devices />
       <MainSections />
       <SubscriptionDetails />
       <BrandsWrapper>
+        <BrandsTitle>
+          <span>
+            Our corporate partners
+          </span>
+        </BrandsTitle>
         <Brands />
       </BrandsWrapper>
       <TestimonialsWrapper>
         <Testimonials />
       </TestimonialsWrapper>
       <Footer />
+      <ArrowIndicator landingRef={landingRef} />
     </div>
   );
 };

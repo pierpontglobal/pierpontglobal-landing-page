@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   width: 100%;
   height: auto;
-  box-shadow: 0px 0px 16px 2px rgb(115, 88, 255, 0.10);
+  box-shadow: 0px 0px 16px 2px rgba(39, 105, 235, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 `;
 
 const Brand = styled.div`
-  width: 200px;
+  width: ${(props) => props.big ? '280px' : '200px'};
   height: 100%;
   cursor: pointer;
   & > img {
@@ -27,7 +27,7 @@ const Brand = styled.div`
       filter: grayscale(20%);
       opacity: 0.8;
     }
-    width: 120px;
+    width: ${ (props) => (!!props.small ? '80px' : props.big ? '180px' : '120px')};
     height: auto;
     filter: grayscale(100%);
     opacity: 0.4;
@@ -40,7 +40,7 @@ const Brand = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 54px;
   }
 `;
 
@@ -51,13 +51,19 @@ const Brands = (props) => {
         <img src="/images/banreservas.png" />
       </Brand>
       <Brand>
-        <img src="/images/stripe.png" />
+        <img src="/images/seaboard-marine-logo.png" />
+      </Brand>
+      {/* <Brand big>
+        <img src="/images/thomson-reuters-logo.svg" />
+      </Brand> */}
+      <Brand small>
+        <img src="/images/us-embassy-logo.png" />
       </Brand>
       <Brand>
-        <img src="/images/banreservas.png" />
+        <img src="/images/refinity-logo.png" />
       </Brand>
       <Brand>
-        <img src="/images/stripe.png" />
+        <img src="/images/popular-logo.png" />
       </Brand>
     </Wrapper>
   );
