@@ -47,10 +47,10 @@ export const Text = styled.div`
 
 export const WorldMap = styled.object`
   position: absolute;
-  top: -2%;
-  left: -18%;
-  width: 70%;
-  height: 70%;
+  top: -6%;
+  left: -22%;
+  width: 90%;
+  height: 90%;
   z-index: 100;
   opacity: 0.04;
 `;
