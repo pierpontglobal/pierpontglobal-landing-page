@@ -1,5 +1,5 @@
 import React from 'react';
-import {Stripes, StripeNode, Content, Text} from './Greetings.styles';
+import {Stripes, StripeNode, Content, Text, WorldMap} from './Greetings.styles';
 import {
   Section,
   Heading,
@@ -125,25 +125,28 @@ class Greetings extends React.Component {
           </Stripes>
           <Content>
             <Text>
-              <Heading>La mejor manera de comprar carros para tu dealer</Heading>
-              <TextBody style={{marginTop: '30px'}}>
-                PierpontGlobal es una plataforma que permite a los dealers de
-                República Dominicana participar en las subastas organizadas por
-                Manheim.
-              </TextBody>
-    
-              <div>
-                <AccentButton style={{margin: '20px 20px 10px 0'}}>
-                  <span>
-                    Create account
-                  </span>
-                </AccentButton>
-                <LightButton style={{margin: '20px 20px 10px 0'}} onClick={() => this.togglePromoVideo(true)}>
-                  <span>
-                    View promotion
-                  </span>
-                </LightButton>
+              <div style={{ zIndex: '200', position: 'absolute', top: '0', left: '0' }}>
+                <Heading>La mejor manera de comprar carros para tu dealer</Heading>
+                <TextBody style={{marginTop: '30px'}}>
+                  PierpontGlobal es una plataforma que permite a los dealers de
+                  República Dominicana participar en las subastas organizadas por
+                  Manheim.
+                </TextBody>
+      
+                <div>
+                  <AccentButton style={{margin: '20px 20px 10px 0'}}>
+                    <span>
+                      Create account
+                    </span>
+                  </AccentButton>
+                  <LightButton style={{margin: '20px 20px 10px 0'}} onClick={() => this.togglePromoVideo(true)}>
+                    <span>
+                      View promotion
+                    </span>
+                  </LightButton>
+                </div>
               </div>
+              <WorldMap type="image/svg+xml" data="/images/world-map-simple.svg" />
             </Text>
           </Content>
         </Section>

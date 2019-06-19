@@ -36,9 +36,21 @@ export const Text = styled.div`
   width: 85%;
   height: 75%;
   min-height: 300px;
+  position: relative;
+  z-index: 200;
 
   @media only screen and (min-width: 768px) {
     height: 55%;
     width: 70%;
   }
+`;
+
+export const WorldMap = styled.object`
+  position: absolute;
+  top: -2%;
+  left: -18%;
+  width: 70%;
+  height: 70%;
+  z-index: 100;
+  opacity: 0.08;
 `;
