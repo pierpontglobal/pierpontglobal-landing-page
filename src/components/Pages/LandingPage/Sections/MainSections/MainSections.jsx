@@ -345,10 +345,18 @@ class MainSections extends React.Component {
         { 
           id: 1,
           showTitle: false,
+          animatedImage: '/gifs/search-listigns-f-2.gif',
+          stoppedImage: '/images/search-listings-stopped.png',
+          activeImage: '/images/search-listings-stopped.png',
+          titleAppeared: false
         },
         {
           id: 2,
           showTitle: false,
+          animatedImage: '/gifs/place-bids-f-2.gif',
+          stoppedImage: '/images/place-bids-stopped.png',
+          activeImage: '/images/place-bids-stopped.png',
+          titleAppeared: false
         },
         {
           id: 3,
@@ -360,6 +368,54 @@ class MainSections extends React.Component {
 
   componentDidMount = () => {
     this.createObserver();
+    // this.createGifsObserver();
+  }
+
+  createGifsObserver = () => {
+    if (window.IntersectionObserver) {
+      this.searchListingSection = document.querySelector('#search-listing-section');
+      this.placeBidSection = document.querySelector('#place-bid-section');
+      const options = {
+        root: null, // document viewport as a trigger
+        threshold: 0.90, // Execute callback on 20% of reveal
+      };
+      this.observer = new IntersectionObserver((entry) => {
+        
+        let sections = [...this.state.sections];
+
+        if (entry[0].isIntersecting) {
+
+          if (entry[0].target.id === 'search-listing-section') {
+            const section = sections[0];
+            if (section.activeImage === section.stoppedImage) {
+              section.activeImage = section.animatedImage;
+            } else {
+              section.activeImage = section.stoppedImage;
+            }
+            sections[0] = section;
+            console.log(sections);
+            this.setState({
+              sections
+            })
+          } else if (entry[0].target.id === 'place-bid-section') {
+            const section = sections[1];
+            if (section.activeImage === section.stoppedImage) {
+              section.activeImage = section.animatedImage;
+            } else {
+              section.activeImage = section.stoppedImage;
+            }
+            sections[1] = section;
+            console.log(sections);
+            this.setState({
+              sections
+            })
+          } 
+        }
+      }, options);
+
+      this.observer.observe(this.searchListingSection);
+      this.observer.observe(this.placeBidSection);
+    }
   }
 
   createObserver = () => {
@@ -374,7 +430,7 @@ class MainSections extends React.Component {
       // Observer configuration
       const options = {
         root: null, // document viewport as a trigger
-        threshold: 0.20, // Execute callback on 20% of reveal
+        threshold: 0.90,
       };
 
       // Observer callback
@@ -383,23 +439,43 @@ class MainSections extends React.Component {
         let sections = [...this.state.sections];
 
         if (entry[0].isIntersecting) {
-          // console.log(entry[0]);
-          console.log(entry[0].target);
+
           if (entry[0].target.id === 'search-listing-section') {
-            sections[0].showTitle = true;
-            console.log('Reache!!');
-            console.log(entry[0].target);
+
+            if (!sections.titleAppeared) {
+              sections[0].showTitle = true;
+            }
+
+            if (sections[0].activeImage === sections[0].stoppedImage) {
+              sections[0].activeImage = sections[0].animatedImage;
+              sections[1].activeImage = sections[1].stoppedImage;
+            } else {
+              sections[0].activeImage = sections[0].stoppedImage;
+            }
+            console.log(sections);
             this.setState({
-              sections
+              sections,
+              titleAppeared: true
             }, () => {
-              this.observer.unobserve(this.searchListingSection);
+              // this.observer.unobserve(this.searchListingSection);
             })
           } else if (entry[0].target.id === 'place-bid-section') {
-            sections[1].showTitle = true;
+            if (!sections.titleAppeared) {
+              sections[1].showTitle = true;
+            }
+
+            if (sections[1].activeImage === sections[1].stoppedImage) {
+              sections[1].activeImage = sections[1].animatedImage;
+              sections[0].activeImage = sections[0].stoppedImage;
+            } else {
+              sections[1].activeImage = sections[1].stoppedImage;
+            }
+            console.log(sections);
             this.setState({
-              sections
+              sections,
+              titleAppeared: true
             }, () => {
-              this.observer.unobserve(this.placeBidSection);
+              // this.observer.unobserve(this.searchListingSection);
             })
           } 
           // else if (entry[0].target.id === 'delivery-section') {
@@ -470,7 +546,7 @@ class MainSections extends React.Component {
         <SectionWrapperWithImageLeft id="search-listing-section">
           <SectionImage>
             {
-              !sections[0].showTitle ? null : (<SectionImageGif index={1} src="/gifs/search-listigns-f-2.gif" />)
+              !sections[0].showTitle ? null : (<SectionImageGif index={1} src={sections[0].activeImage} />)
             }
             <BackgroundStyle type="image/svg+xml" index={1} data="/images/background-style-colored-new.svg" />
           </SectionImage>
@@ -510,7 +586,7 @@ class MainSections extends React.Component {
           </SectionTextContent>
           <SectionImage>
             {
-              !sections[1].showTitle ? null : (<SectionImageGif index={2} src="/gifs/place-bids-f-2.gif" />)
+              !sections[1].showTitle ? null : (<SectionImageGif index={2} src={sections[1].activeImage} />)
             }
             <BackgroundStyle type="image/svg+xml" index={2} data="/images/background-style-colored-new.svg" />
           </SectionImage>
