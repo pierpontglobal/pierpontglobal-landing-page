@@ -470,7 +470,7 @@ class MainSections extends React.Component {
         <SectionWrapperWithImageLeft id="search-listing-section">
           <SectionImage>
             {
-              !sections[0].showTitle ? null : (<SectionImageGif index={1} src="/gifs/search-listings-slower.gif" />)
+              !sections[0].showTitle ? null : (<SectionImageGif index={1} src="/gifs/search-listigns-f-2.gif" />)
             }
             <BackgroundStyle type="image/svg+xml" index={1} data="/images/background-style-colored-new.svg" />
           </SectionImage>
@@ -510,7 +510,7 @@ class MainSections extends React.Component {
           </SectionTextContent>
           <SectionImage>
             {
-              !sections[1].showTitle ? null : (<SectionImageGif index={2} src="/gifs/place-bids.gif" />)
+              !sections[1].showTitle ? null : (<SectionImageGif index={2} src="/gifs/place-bids-f-2.gif" />)
             }
             <BackgroundStyle type="image/svg+xml" index={2} data="/images/background-style-colored-new.svg" />
           </SectionImage>
