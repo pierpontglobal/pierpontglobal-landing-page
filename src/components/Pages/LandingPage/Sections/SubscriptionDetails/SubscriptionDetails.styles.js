@@ -82,7 +82,7 @@ export const Currency = styled.div`
   width: 0;
   position: relative;
   ::before {
-    content: "US$";
+    content: "USD$";
     position: absolute;
     right: 100%;
   }
@@ -111,7 +111,7 @@ export const Money = styled.div`
     font-size: 16px;
   }
   ::after {
-    content: "/yr";
+    content: "/car";
     position: absolute;
     left: 105%;
     bottom: 8px;

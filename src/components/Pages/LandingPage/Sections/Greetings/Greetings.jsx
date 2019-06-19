@@ -1,5 +1,5 @@
 import React from 'react';
-import {Stripes, StripeNode, Content, Text, WorldMap} from './Greetings.styles';
+import { Stripes, StripeNode, Content, Text, WorldMap } from './Greetings.styles';
 import {
   Section,
   Heading,
@@ -8,7 +8,7 @@ import {
   LightButton,
 } from '../../LandingPage.styles';
 import './Greetings.css';
-import {Button} from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import IframeModal from '../../../../IframeModal/IframeModal';
 import styled from 'styled-components';
 
@@ -41,7 +41,7 @@ class Greetings extends React.Component {
         }
       }
     } else {
-      if ( showOnlyVideoInModal ) {
+      if (showOnlyVideoInModal) {
         this.setState({
           videoHeight: '80%',
           videoWidth: '80%',
@@ -127,19 +127,19 @@ class Greetings extends React.Component {
             <Text>
               <div style={{ zIndex: '200', position: 'absolute', top: '0', left: '0' }}>
                 <Heading>La mejor manera de comprar carros para tu dealer</Heading>
-                <TextBody style={{marginTop: '30px'}}>
+                <TextBody style={{ marginTop: '30px' }}>
                   PierpontGlobal es una plataforma que permite a los dealers de
                   República Dominicana participar en las subastas organizadas por
                   Manheim.
                 </TextBody>
-      
+
                 <div>
-                  <AccentButton style={{margin: '20px 20px 10px 0'}}>
+                  <AccentButton style={{ margin: '20px 20px 10px 0' }}>
                     <span>
                       Create account
                     </span>
                   </AccentButton>
-                  <LightButton style={{margin: '20px 20px 10px 0'}} onClick={() => this.togglePromoVideo(true)}>
+                  <LightButton style={{ margin: '20px 20px 10px 0' }} onClick={() => this.togglePromoVideo(true)}>
                     <span>
                       View promotion
                     </span>

@@ -53,9 +53,9 @@ const Brands = (props) => {
       <Brand>
         <img src="/images/seaboard-marine-logo.png" />
       </Brand>
-      {/* <Brand big>
-        <img src="/images/thomson-reuters-logo.svg" />
-      </Brand> */}
+      {<Brand small>
+        <img src="/images/thomson-reuters-logo.png" />
+      </Brand>}
       <Brand small>
         <img src="/images/us-embassy-logo.png" />
       </Brand>

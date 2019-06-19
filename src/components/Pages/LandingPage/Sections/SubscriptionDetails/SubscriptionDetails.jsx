@@ -1,5 +1,5 @@
 import React from 'react';
-import {Section} from '../../LandingPage.styles';
+import { Section } from '../../LandingPage.styles';
 import {
   Wrapper,
   MainBox,
@@ -31,7 +31,7 @@ class SubscriptionDetails extends React.Component {
   createObserver = () => {
     // Intersection observer (JavaScript)
     if (window.IntersectionObserver) {
-      
+
       // To observer elements
       this.secondaryBox = document.querySelector('#main-box');
 
@@ -63,7 +63,7 @@ class SubscriptionDetails extends React.Component {
   render() {
     const { revealSecondaryBox } = this.state;
     return (
-      <Section style={{height: 'auto'}}>
+      <Section style={{ height: 'auto' }}>
         <SectionTitle>
           <span>
             Simple and transparent pricing
@@ -80,7 +80,7 @@ class SubscriptionDetails extends React.Component {
               <Currency />
               <Money>495</Money>
             </TextAccent>
-            <SubtitleText>+ 300.00 US$ per car you order</SubtitleText>
+            <SubtitleText>+ $ 1,295.00 USD annual membership fee</SubtitleText>
             <Features>
               <i className="material-icons">directions_car</i>
               <SubtleText>Get your inventory from the best place</SubtleText>
@@ -106,14 +106,14 @@ class SubscriptionDetails extends React.Component {
                   Easy, quick and comfortable to use. Take your dealer to the next
                   level a stand out from the competition.
                 </SubtitleText>
-      
+
                 <FeaturesBox>
                   <div>Big inventory</div>
                   <div>Whole prices</div>
                   <div>Post-Sale Inspections</div>
                   <div>Autocheck</div>
                 </FeaturesBox>
-      
+
                 <BoxButtonDark>
                   CONTACT SUPPORT <i className="material-icons">arrow_forward</i>
                 </BoxButtonDark>
