@@ -452,6 +452,10 @@ class MainSections extends React.Component {
             } else {
               sections[0].activeImage = sections[0].stoppedImage;
             }
+
+            if (sections[0].activeImage === sections[0].stoppedImage && sections[1].activeImage === sections[1].stoppedImage) {
+              sections[0].activeImage = sections[0].animatedImage;
+            }
             console.log(sections);
             this.setState({
               sections,
@@ -469,6 +473,10 @@ class MainSections extends React.Component {
               sections[0].activeImage = sections[0].stoppedImage;
             } else {
               sections[1].activeImage = sections[1].stoppedImage;
+            }
+
+            if (sections[0].activeImage === sections[0].stoppedImage && sections[1].activeImage === sections[1].stoppedImage) {
+              sections[1].activeImage = sections[1].animatedImage;
             }
             console.log(sections);
             this.setState({
