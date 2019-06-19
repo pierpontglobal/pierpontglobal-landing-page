@@ -63,7 +63,7 @@ class Greetings extends React.Component {
       <>
         <IframeModal open={showVideo} onlyChildren={showOnlyVideoInModal} src={'https://www.youtube.com/embed/XEcELW3hkuQ'} width={videoWidth} height={videoHeight} handleClose={() => this.togglePromoVideo(false)} />
         <Section>
-          <ul className="circles">
+          {/* <ul className="circles">
             <li />
             <li />
             <li />
@@ -74,17 +74,17 @@ class Greetings extends React.Component {
             <li />
             <li />
             <li />
-          </ul>
+          </ul> */}
           <Stripes>
-            <StripeNode
+            {/* <StripeNode
               style={{
                 width: '25%',
                 height: '20vh',
                 opacity: '0.3',
                 background: '#62fbfc',
               }}
-            />
-            <StripeNode
+            /> */}
+            {/* <StripeNode
               style={{
                 left: '25%',
                 width: '20%',
@@ -92,8 +92,8 @@ class Greetings extends React.Component {
                 opacity: '0.1',
                 background: '#37fbfb',
               }}
-            />
-            <StripeNode
+            /> */}
+            {/* <StripeNode
               style={{
                 left: '45%',
                 width: '15%',
@@ -101,8 +101,8 @@ class Greetings extends React.Component {
                 opacity: '0.1',
                 background: '#1efafa',
               }}
-            />
-            <StripeNode
+            /> */}
+            {/* <StripeNode
               style={{
                 bottom: '0',
                 right: '0',
@@ -111,8 +111,8 @@ class Greetings extends React.Component {
                 opacity: '0.4',
                 background: '#05fafa',
               }}
-            />
-            <StripeNode
+            /> */}
+            {/* <StripeNode
               style={{
                 bottom: '0',
                 left: '0',
@@ -121,7 +121,7 @@ class Greetings extends React.Component {
                 opacity: '0.4',
                 background: '#05e1e1',
               }}
-            />
+            /> */}
           </Stripes>
           <Content>
             <Text>
