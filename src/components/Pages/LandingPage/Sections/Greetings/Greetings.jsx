@@ -146,7 +146,7 @@ class Greetings extends React.Component {
                   </LightButton>
                 </div>
               </div>
-              <WorldMap type="image/svg+xml" data="/images/world-map-simple.svg" />
+              <WorldMap type="image/svg+xml" data="/images/world-map-simple-colored.svg" />
             </Text>
           </Content>
         </Section>

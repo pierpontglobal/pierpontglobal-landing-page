@@ -52,5 +52,5 @@ export const WorldMap = styled.object`
   width: 70%;
   height: 70%;
   z-index: 100;
-  opacity: 0.08;
+  opacity: 0.04;
 `;
