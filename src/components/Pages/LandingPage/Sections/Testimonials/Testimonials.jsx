@@ -163,10 +163,10 @@ class Testimonials extends React.Component {
         {
           id: 1,
           show: true,
-          name: 'Carlos Abreu',
+          name: 'Carlos de la Paz',
           role: 'Car dealership owner',
           picture: '/images/smaple-user-1.png',
-          message: 'The process was nice and easy from start to finish, I had a great customer service. I would recommend Pierpont Global to everyone looking for cars.',
+          message: 'I like the fact that in PPG I can buy directly without the need for other intermediaries, from start to finish the process was done in the same platform.',
         },
         {
           id: 2,
@@ -182,7 +182,7 @@ class Testimonials extends React.Component {
           name: 'Marcos Berroa',
           role: 'Car dealership owner',
           picture: '/images/sample-user-3.jpeg',
-          message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
+          message: 'The process was nice and easy from start to finish, I had a great customer service. I would recommend Pierpont Global to everyone looking for cars.',
         },
         {
           id: 4,
@@ -190,7 +190,7 @@ class Testimonials extends React.Component {
           name: 'Jose y Carlos Santana',
           role: 'Car dealership owner',
           picture: '/images/sample-user-4.jpg',
-          message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
+          message: 'The process was nice and easy from start to finish. Hector was nice and had great customer service. I would recommend PPG to everyone looking for buying cars from US auctions.',
         },
       ],
       indicators: [],
@@ -206,10 +206,10 @@ class Testimonials extends React.Component {
     const { testimonials } = this.state;
 
     const howManyIndicators = Math.floor(testimonials.length / this.quantityToShow);
-    
+
     let indicators = [];
     // Create indicators
-    for(let i = 0; i < howManyIndicators; i++) {
+    for (let i = 0; i < howManyIndicators; i++) {
       indicators.push({
         active: false,
         test: null,
@@ -228,10 +228,10 @@ class Testimonials extends React.Component {
     const { testimonials } = this.state;
 
     const howManyIndicators = Math.floor(testimonials.length / this.quantityToShow);
-    
+
     let indicators = [];
     // Create indicators
-    for(let i = 0; i < howManyIndicators; i++) {
+    for (let i = 0; i < howManyIndicators; i++) {
       indicators.push({
         active: false,
         test: null,
@@ -253,7 +253,7 @@ class Testimonials extends React.Component {
         t.show = false;
       });
       testimonials[0].show = true;
-      
+
       this.setState({
         indicators,
         testimonials,
@@ -272,7 +272,7 @@ class Testimonials extends React.Component {
       cards.forEach(card => {
         card.style.animation = "remove-card 0.8s";
       });
-      
+
       // After exit animation.. Show the next ones
       setTimeout(() => {
         let testimonials = [...this.state.testimonials];
@@ -290,7 +290,7 @@ class Testimonials extends React.Component {
         let loopTimes = indicatorIndex;
         let startGroupLoop = this.quantityToShow;
         let activeIndex = 0;
-        for(let i = 0; i < loopTimes; i++) {
+        for (let i = 0; i < loopTimes; i++) {
           activeIndex = Math.abs(this.quantityToShow - startGroupLoop);
           startGroupLoop++;
         }
@@ -299,7 +299,7 @@ class Testimonials extends React.Component {
         // Calculate next group
         let nextGroup = indicatorIndex * this.quantityToShow;
 
-        if ( this.quantityToShow > 1 ) {
+        if (this.quantityToShow > 1) {
           testimonials[nextGroup - 1].show = true;
           testimonials[nextGroup - 2].show = true;
         } else {
@@ -318,7 +318,7 @@ class Testimonials extends React.Component {
   showByOne = () => {
     this.quantityToShow = 1;
   }
-  
+
   componentWillReceiveProps = (newProps) => {
     console.log(newProps);
   }
@@ -337,23 +337,23 @@ class Testimonials extends React.Component {
           {
             testimonials.map((t) => {
               if (t.show) {
-                return (<Card key={ t.id } cardId={ t.id } id="showing-card" animationName={'appears-card'}>
-                          <CardHeader>
-                            <UserPhoto src={ t.picture } />
-                            <UserName cardId={ t.id }>
-                              <span>{ t.name }</span>
-                            </UserName>
-                            <UserRole cardId={ t.id }>
-                              <span>{ t.role }</span>
-                            </UserRole>
-                          </CardHeader>
-                          <CardBody cardId={t.id}>
-                            <span>
-                              { t.message }
-                            </span>
-                          </CardBody>
-                        </Card>
-                      );
+                return (<Card key={t.id} cardId={t.id} id="showing-card" animationName={'appears-card'}>
+                  <CardHeader>
+                    <UserPhoto src={t.picture} />
+                    <UserName cardId={t.id}>
+                      <span>{t.name}</span>
+                    </UserName>
+                    <UserRole cardId={t.id}>
+                      <span>{t.role}</span>
+                    </UserRole>
+                  </CardHeader>
+                  <CardBody cardId={t.id}>
+                    <span>
+                      {t.message}
+                    </span>
+                  </CardBody>
+                </Card>
+                );
               } else {
                 return null;
               }
@@ -363,9 +363,9 @@ class Testimonials extends React.Component {
         <CardsIndicator>
           {
             indicators.map((indicator, index) => (
-              <Indicator active={ indicator.active } onClick={() => this.nextTestimonials( !indicator.active, index + 1 )} />
+              <Indicator active={indicator.active} onClick={() => this.nextTestimonials(!indicator.active, index + 1)} />
             )
-          )}
+            )}
         </CardsIndicator>
       </Wrapper>
     );
