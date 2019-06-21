@@ -163,10 +163,10 @@ class Testimonials extends React.Component {
         {
           id: 1,
           show: true,
-          name: 'Jhon Doe',
+          name: 'Carlos Abreu',
           role: 'Car dealership owner',
           picture: '/images/smaple-user-1.png',
-          message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
+          message: 'The process was nice and easy from start to finish, I had a great customer service. I would recommend Pierpont Global to everyone looking for cars.',
         },
         {
           id: 2,
@@ -174,7 +174,7 @@ class Testimonials extends React.Component {
           name: 'Pedro Almonte',
           role: 'Car dealership owner',
           picture: '/images/sample-user-2.jpg',
-          message: 'Maecenas laoreet erat eros, vitae tempor augue pretium at. Proin nec luctus elit. Nunc sagittis nec mauris laoreet vehicula. Phasellus sodales nunc vel nisi ullamcorper feugiat. Etiam dictum neque vitae sem vulputate cursus.',
+          message: 'Customer service was great. People were very friendly and helpful. They were quick to have my car at the port. I would recommend Pierpont Global.',
         },
         {
           id: 3,

@@ -39,10 +39,10 @@ const ImgBox = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 84px;
-  margin-bottom: 54px;
+  margin-bottom: 102px;
   @media only screen and (max-width: 768px) {
     margin-top: 8px;
-    margin-bottom: 48px;
+    margin-bottom: 64px;
   }
 `;
 
