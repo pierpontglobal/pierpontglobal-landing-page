@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import Img from 'react-image';
 
 const Wrapper = styled.div`
   height: auto;
   width: 100%;
   margin: 0 auto;
+  margin-bottom: 80px;
 `;
 
 const Title = styled.div`
@@ -30,7 +32,7 @@ const Title = styled.div`
   }
 `;
 
-const Img = styled.div`
+const ImgBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -188,7 +190,7 @@ const SectionWrapperWithImageLeft = styled.div`
   grid-template-columns: 40% 60%;
   grid-template-rows: auto;
   position: relative;
-  margin-bottom: 148px;
+  margin-bottom: 182px;
 
   @media only screen and (max-width: 768px) {
     grid-template-columns: auto;
@@ -204,7 +206,7 @@ const SectionWrapperWithImageRight = styled.div`
   grid-template-columns: 60% 40%;
   grid-template-rows: auto;
   position: relative;
-  margin-bottom: 148px;
+  margin-bottom: 182px;
   justify-items: end;
 
   @media only screen and (max-width: 768px) {
@@ -242,8 +244,8 @@ const SectionImageGif = styled.img`
   height: auto;
   z-index: 200;
   opacity: 0;
-  transform: ${props => (props.index % 2 === 0) ? 'translateX(-45px) translateY(35px) rotate(0deg)' : 'translateX(45px) translateY(55px) rotate(0deg)'};
-  box-shadow: ${props => (props.index % 2 === 0) ? '24px 24px 12px 0px rgb(0, 0, 0, 0.1)' : '-24px 24px 12px 0px rgb(0, 0, 0, 0.1)'};
+  transform: ${props => (props.index % 2 === 0) ? 'translateX(45px) translateY(35px) rotate(0deg)' : 'translateX(-45px) translateY(55px) rotate(0deg)'};
+  box-shadow: ${props => (props.index % 2 !== 0) ? '24px 24px 12px 0px rgb(0, 0, 0, 0.1)' : '-24px 24px 12px 0px rgb(0, 0, 0, 0.1)'};
   animation: appears 1s ease-in-out;
   -webkit-animation-fill-mode: forwards;
   
@@ -325,15 +327,15 @@ const BackgroundStyle = styled.object`
   height: 170%;
   width: 170%;
   top: 0;
-  left: ${props => (props.index % 2 === 0) ? '' : '-260px'};
-  right: ${props => (props.index % 2 === 0) ? '-220px' : 'none'};
-  transform: ${props => (props.index % 2 === 0) ? 'rotate(180deg)' : 'none'};
+  left: ${props => (props.index % 2 !== 0) ? '' : '-260px'};
+  right: ${props => (props.index % 2 !== 0) ? '-280px' : 'none'};
+  transform: ${props => (props.index % 2 !== 0) ? 'rotate(180deg)' : 'none'};
 
   @media only screen and (max-width: 768px) {
     height: 100%;
     width: 100%;
-    left: ${props => (props.index % 2 === 0) ? '' : '-120px'};
-    right: ${props => (props.index % 2 === 0) ? '-120px' : 'none'};
+    left: ${props => (props.index % 2 !== 0) ? '' : '-120px'};
+    right: ${props => (props.index % 2 !== 0) ? '-120px' : 'none'};
   }
 `;
 
@@ -508,7 +510,7 @@ class MainSections extends React.Component {
     const { sections } = this.state;
     return (
       <Wrapper>
-        <Img>
+        <ImgBox>
           <Title>
             <h1>Featuring inventory from</h1>
           </Title>
@@ -555,13 +557,11 @@ class MainSections extends React.Component {
               </ImageBoxInner>
             </ImageBox>
           </Images>
-        </Img>
+        </ImgBox>
         <SectionWrapperWithImageLeft id="search-listing-section">
           <SectionImage>
-            {
-              !sections[0].showTitle ? null : (<SectionImageGif index={1} src={sections[0].activeImage} />)
-            }
-            <BackgroundStyle type="image/svg+xml" index={1} data="/images/background-style-colored-new.svg" />
+            <SectionImageGif index={0} src={sections[0].activeImage} />
+            <BackgroundStyle type="image/svg+xml" index={0} data="/images/background-style-colored-new.svg" />
           </SectionImage>
           <SectionTextContent index={1}>
             {
@@ -598,10 +598,8 @@ class MainSections extends React.Component {
             }
           </SectionTextContent>
           <SectionImage>
-            {
-              !sections[1].showTitle ? null : (<SectionImageGif index={2} src={sections[1].activeImage} />)
-            }
-            <BackgroundStyle type="image/svg+xml" index={2} data="/images/background-style-colored-new.svg" />
+            <SectionImageGif index={1} src={sections[1].activeImage} />
+            <BackgroundStyle type="image/svg+xml" index={1} data="/images/background-style-colored-new.svg" />
           </SectionImage>
         </SectionWrapperWithImageRight>
         {/* <SectionWrapperWithImageLeft id="delivery-section">
