@@ -38,8 +38,8 @@ const BrandsTitle = styled.div`
 const TestimonialsWrapper = styled.div`
   width: 80%;
   height: auto;
-  margin-top: 220px;
-  margin-bottom: 102px;
+  margin-top: 80px;
+  margin-bottom: 80px;
   margin-left: auto;
   margin-right: auto;
 
@@ -56,7 +56,7 @@ const LandingPage = (props) => {
   return (
     <div
       className="LandingPageWrapper"
-      style={{overflow: 'hidden', position: 'relative'}}
+      style={{ overflow: 'hidden', position: 'relative' }}
       ref={landingRef}
     >
       <Greetings />
@@ -71,9 +71,7 @@ const LandingPage = (props) => {
         </BrandsTitle>
         <Brands />
       </BrandsWrapper>
-      <TestimonialsWrapper>
-        <Testimonials />
-      </TestimonialsWrapper>
+      <Testimonials />
       <Footer />
       <ArrowIndicator landingRef={landingRef} />
     </div>
