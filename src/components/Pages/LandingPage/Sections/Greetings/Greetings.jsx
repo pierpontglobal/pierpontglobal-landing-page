@@ -128,7 +128,7 @@ class Greetings extends React.Component {
               <div style={{ zIndex: '200', position: 'absolute', top: '0', left: '0' }}>
                 <Heading>Simplifying international wholesale vehicle purchases</Heading>
                 <TextBody style={{ marginTop: '30px' }}>
-                  PierpontGlobal is a platform that allows Dominican Republic dealers to participate in auctions organized by Manheim.
+                  Pierpont Global is a platform which provides licensed automotive dealers direct access to reputable US based auctions.
                 </TextBody>
 
                 <div>
