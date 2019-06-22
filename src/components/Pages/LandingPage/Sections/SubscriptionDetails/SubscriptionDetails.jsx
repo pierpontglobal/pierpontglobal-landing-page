@@ -73,8 +73,7 @@ class SubscriptionDetails extends React.Component {
           <MainBox id="main-box">
             <Title color="#173753">PPG USA ACCESS</Title>
             <TextH1>
-              Access a platform with thousand of cars and participate on Manheim
-              auctions
+              Dealer-only access to hundreds of reputable auction locations.
             </TextH1>
             <TextAccent>
               <Currency />
@@ -92,7 +91,7 @@ class SubscriptionDetails extends React.Component {
               <SubtleText>Grow your business with us</SubtleText>
             </Features>
             <BoxButton>
-              SUBSCRIBE TODAY <i className="material-icons">arrow_forward</i>
+              BECOME A MEMBER <i className="material-icons">arrow_forward</i>
             </BoxButton>
           </MainBox>
           {
@@ -100,7 +99,7 @@ class SubscriptionDetails extends React.Component {
               <SecondaryBox id="secondary-box">
                 <Title color="#ffffff">AMAZING FEATURES</Title>
                 <TextH1>
-                  Gain advantages from the features our platform can offer
+                  Take advantage of the befits that our platform offers.
                 </TextH1>
                 <SubtitleText color={'rgba(255, 255, 255, 0.5)'}>
                   Easy, quick and comfortable to use. Take your dealer to the next
@@ -108,8 +107,8 @@ class SubscriptionDetails extends React.Component {
                 </SubtitleText>
 
                 <FeaturesBox>
-                  <div>Big inventory</div>
-                  <div>Whole prices</div>
+                  <div>Large inventory selection</div>
+                  <div>Wholesale prices</div>
                   <div>Post-Sale Inspections</div>
                   <div>Autocheck</div>
                 </FeaturesBox>
