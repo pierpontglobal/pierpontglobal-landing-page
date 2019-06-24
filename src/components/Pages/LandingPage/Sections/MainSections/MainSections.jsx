@@ -13,6 +13,9 @@ const Title = styled.div`
   width: 100%;
   height: 48px;
   margin-bottom: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,6 +37,9 @@ const Title = styled.div`
 
 const ImgBox = styled.div`
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -219,6 +225,9 @@ const SectionWrapperWithImageRight = styled.div`
 const SectionTextContent = styled.div`
   width: 70%;
   height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -231,6 +240,9 @@ const SectionTextContent = styled.div`
 const SectionImage = styled.div`
   width: 90%;
   height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   justify-content: center;
   align-items: center;
