@@ -19,4 +19,8 @@ export const DeviceHolder = styled.div`
     transform: rotate(-12deg) scale(0.5);
     right: -35%;
   }
+
+  @media only screen and (max-width: 480px) {
+    display: none;
+  }
 `;
