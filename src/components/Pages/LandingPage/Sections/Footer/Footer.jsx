@@ -113,7 +113,7 @@ const AboutCompnaySection = styled(Section)`
 `;
 
 const LogoWrapper = styled.img`
-  width: 280px;
+  width: 220px;
   height: auto;
   background-size: cover;
   filter: brightness(1.6);
@@ -222,6 +222,7 @@ const FooterBottomBox = styled.div`
 const RighstReserved = styled(FooterBottomBox)`
   & > span {
     color: rgb(0, 0, 0, 0.60);
+    font-size: 0.8rem;
   }
   display: flex;
   justify-content: center;
@@ -251,6 +252,7 @@ const PrivacyLink = styled.div`
     cursor: pointer;
     color: rgb(0, 0, 0, 0.60);
     transition: all 0.4s;
+    font-size: 0.8rem;
   }
 `;
 
@@ -258,7 +260,7 @@ const ActionButton = styled.div`
   background: white;
   border-radius: 4px;
   box-shadow: 0px 0px 32px 8px rgb(0, 0, 0, 0.1);
-  padding: 16px 24px;
+  padding: 12px 16px;
   margin-top: -54px;
   margin-left: 12px;
   margin-right: 12px;
@@ -267,14 +269,16 @@ const ActionButton = styled.div`
 
   &:hover {
     & > span {
-      color: rgb(39, 105, 235, 1);
+      color: rgb(39, 105, 235, 0.95);
+      font-size: 0.8rem;
     }
-    box-shadow: 0px 4px 32px 12px rgb(0, 0, 0, 0.17);
+    box-shadow: 0px 4px 32px 12px rgb(0, 0, 0, 0.08);
   }
   & > span {
     color: rgb(39, 105, 235, 0.60);
     font-weight: 600;
     transition: all 0.4s;
+    font-size: 0.8rem;
   }
 
   @media only screen and (max-width: 768px) {

@@ -26,7 +26,7 @@ const ArrowIconWrapper = styled.div`
   cursor: pointer;
   
   & > svg {
-    font-size: 2.5rem !important;
+    font-size: 2.2rem !important;
     color: ${props => props.bottomReached ? 'white' : '#3a3e43'};
     transition: all .3s !important;
     transform: ${props => props.bottomReached ? 'rotate(-180deg)' : 'rotate(0deg)'} !important;
