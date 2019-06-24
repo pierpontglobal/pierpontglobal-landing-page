@@ -8,7 +8,7 @@ export const DeviceHolder = styled.div`
   position: absolute;
   top: 30vh;
   right: -10%;
-  z-index: 100;
+  z-index: 150;
 
   @media only screen and (max-width: 1230px) {
     transform: rotate(-12deg) scale(0.7);

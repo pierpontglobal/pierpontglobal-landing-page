@@ -635,7 +635,7 @@ class MainSections extends React.Component {
               sections[2].showTitle ? (
                 <>
                   <SectionTitle index={3} id="delivery-title">
-                    Track Shipment
+                    Track Shipments
                   </SectionTitle>
                   <SectionParagraph index={3}>
                     <span>
