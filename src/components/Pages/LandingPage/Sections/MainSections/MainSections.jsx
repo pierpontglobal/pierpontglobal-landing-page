@@ -363,6 +363,10 @@ class MainSections extends React.Component {
         {
           id: 3,
           showTitle: false,
+          animatedImage: '/images/track-shippment.jpeg',
+          stoppedImage: '/images/track-shippment.jpeg',
+          activeImage: '/images/track-shippment.jpeg',
+          titleAppeared: false
         },
       ]
     }
@@ -427,7 +431,7 @@ class MainSections extends React.Component {
       // To observer elements
       this.searchListingSection = document.querySelector('#search-listing-section');
       this.placeBidSection = document.querySelector('#place-bid-section');
-      // this.deliverySection = document.querySelector('#delivery-section');
+      this.trackShippmentSections = document.querySelector('#track-shippment');
 
       // Observer configuration
       const options = {
@@ -488,21 +492,40 @@ class MainSections extends React.Component {
               // this.observer.unobserve(this.searchListingSection);
             })
           } 
-          // else if (entry[0].target.id === 'delivery-section') {
-          //   sections[2].showTitle = true;
-          //   this.setState({
-          //     sections
-          //   }, () => {
-          //     this.observer.unobserve(this.deliverySection);
-          //   })
-          // }
+          else if (entry[0].target.id === 'track-shippment') {
+            if (!sections.titleAppeared) {
+              sections[2].showTitle = true;
+            }
+
+            if (sections[2].activeImage === sections[2].stoppedImage) {
+              sections[1].activeImage = sections[1].stoppedImage;
+              sections[0].activeImage = sections[0].stoppedImage;
+              sections[2].activeImage = sections[2].animatedImage;
+            } else {
+              sections[2].activeImage = sections[2].stoppedImage;
+            }
+
+            if (sections[0].activeImage === sections[0].stoppedImage && sections[1].activeImage === sections[1].animatedImage) {
+              sections[1].activeImage = sections[1].stoppedImage;
+            }
+            if (sections[1].activeImage === sections[1].stoppedImage && sections[2].activeImage === sections[2].stoppedImage) {
+              sections[2].activeImage = sections[2].animatedImage;
+            }
+            console.log(sections);
+            this.setState({
+              sections,
+              titleAppeared: true
+            }, () => {
+              // this.observer.unobserve(this.searchListingSection);
+            })
+          }
         }
       }, options);
 
       // Initialize observer on elements
       this.observer.observe(this.searchListingSection);
       this.observer.observe(this.placeBidSection);
-      // this.observer.observe(this.deliverySection);
+      this.observer.observe(this.trackShippmentSections);
     }
   }
 
@@ -602,30 +625,28 @@ class MainSections extends React.Component {
             <BackgroundStyle type="image/svg+xml" index={1} data="/images/background-style-colored-new.svg" />
           </SectionImage>
         </SectionWrapperWithImageRight>
-        {/* <SectionWrapperWithImageLeft id="delivery-section">
+        <SectionWrapperWithImageLeft id="track-shippment">
           <SectionImage>
-          { 
-              !sections[2].showTitle ? null : (<SectionImageGif index={3} src="/images/mailchimp.gif" />)
-            }
-            <BackgroundStyle index={3} src="/images/background-style-colored.svg" />
+            <SectionImageGif index={2} src={sections[2].activeImage} />
+            <BackgroundStyle type="image/svg+xml" index={2} data="/images/background-style-colored-new.svg" />
           </SectionImage>
           <SectionTextContent index={3}>
             {
               sections[2].showTitle ? (
                 <>
                   <SectionTitle index={3} id="delivery-title">
-                    Delivery
+                    Track Shipment
                   </SectionTitle>
                   <SectionParagraph index={3}>
                     <span>
-                      We handle the process of delivering the vehicles from the auction to your near port, while giving you tracking updates along the way. We will get you the best ground transport rates, shipping rates, as well as import customs and tax rates. With all invoices provided in real time.
+                      Get real time status updates and complete documentation as your vehicle travels from auction, to transporter, to freight forwarder, all the way through customs.
                     </span>
                   </SectionParagraph>
                 </>
               ) : null
             }
           </SectionTextContent>
-        </SectionWrapperWithImageLeft> */}
+        </SectionWrapperWithImageLeft>
       </Wrapper>
     );
   }
