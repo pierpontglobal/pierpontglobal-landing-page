@@ -110,14 +110,6 @@ export default function Testimonials() {
       role: 'Car dealership owner',
       picture: '/images/sample-user-3.jpeg',
       message: 'The process was nice and easy from start to finish, I had a great customer service. I would recommend Pierpont Global to everyone looking for cars.',
-    },
-    {
-      id: 4,
-      show: false,
-      name: 'Jose y Carlos Santana',
-      role: 'Car dealership owner',
-      picture: '/images/sample-user-4.jpg',
-      message: 'The process was nice and easy from start to finish. Hector was nice and had great customer service. I would recommend PPG to everyone looking for buying cars from US auctions.',
     }]);
 
   useEffect(() => {
