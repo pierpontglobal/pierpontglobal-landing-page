@@ -9,26 +9,34 @@ export const Section = styled.div`
 `;
 
 export const Heading = styled.div`
-  font-size: 42px;
+  font-size: 2.0rem;
   color: white;
   font-weight: 400;
   @media only screen and (max-width: 768px) {
-    font-size: 36px;
+    font-size: 1.8rem;
   }
   @media only screen and (max-width: 480px) {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 `;
 
 export const TextBody = styled.div`
-  font-size: 18px;
+  font-size: 1.32rem;
   color: white;
   line-height: 30px;
   font-weight: 200;
-  @media only screen and (min-width: 768px) {
-    line-height: 36px;
-    font-size: 24px;
+  max-width: 60%;
+  @media only screen and (max-width: 768px) {
+    line-height: 30px;
+    font-size: 1.24rem;
     margin-right: 40%;
+    max-width: 80%;
+  }
+  @media only screen and (max-width: 480px) {
+    line-height: 30px;
+    font-size: 1.16rem;
+    margin-right: 40%;
+    max-width: 90%;
   }
 `;
 

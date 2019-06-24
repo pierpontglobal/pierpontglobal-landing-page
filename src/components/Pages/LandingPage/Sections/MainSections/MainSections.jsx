@@ -22,7 +22,7 @@ const Title = styled.div`
   margin-top: 48px;
   & > h1 {
     font-weight: 100;
-    font-size: 3.25rem;
+    font-size: 3.16rem;
   }
 
   @media only screen and (max-width: 768px) {
@@ -154,7 +154,7 @@ const WaveStyleRight = styled.img`
 
 
 const ImgWrapper = styled.img`
-  width: 336px;
+  width: 280px;
   height: auto;
   padding: 16px;
   z-index: 200;

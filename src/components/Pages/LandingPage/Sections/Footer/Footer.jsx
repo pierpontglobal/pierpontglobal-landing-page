@@ -113,7 +113,7 @@ const AboutCompnaySection = styled(Section)`
 `;
 
 const LogoWrapper = styled.img`
-  width: 320px;
+  width: 280px;
   height: auto;
   background-size: cover;
   filter: brightness(1.6);

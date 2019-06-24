@@ -27,7 +27,7 @@ export const BasicChangeableButton = styled(Button)`
   outline: none !important;
   box-shadow: none !important;
   font-weight: 600 !important;
-  font-size: 1.08rem !important;
+  font-size: 0.9rem !important;
   transition: 0.4s !important;
   padding: 0 30px !important;
   :hover {
@@ -42,9 +42,9 @@ export const UsefulLinks = styled.div`
 `;
 
 export const ItemsContainer = styled.div`
-  height: calc(100% - 20px);
-  height: -webkit-calc(100% - 20px);
-  height: -moz-calc(100% - 20px);
+  height: calc(100% - 30px);
+  height: -webkit-calc(100% - 30px);
+  height: -moz-calc(100% - 30px);
   width: 85%;
   display: flex;
   justify-content: space-between;

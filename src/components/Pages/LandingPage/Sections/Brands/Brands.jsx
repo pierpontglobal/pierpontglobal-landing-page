@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 `;
 
 const Brand = styled.div`
-  width: ${(props) => props.big ? '280px' : '200px'};
+  width: ${(props) => props.big ? '200px' : '140px'};
   height: 100%;
   cursor: pointer;
   & > img {
@@ -27,7 +27,7 @@ const Brand = styled.div`
       filter: grayscale(20%);
       opacity: 0.8;
     }
-    width: ${ (props) => (!!props.small ? '80px' : props.big ? '180px' : '120px')};
+    width: ${ (props) => (!!props.small ? '60px' : props.big ? '140px' : '60px')};
     height: auto;
     filter: grayscale(100%);
     opacity: 0.4;

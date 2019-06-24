@@ -5,7 +5,7 @@ import posed, { PoseGroup } from 'react-pose';
 const Wrapper = styled.div`
 width: 100%;
 height: 500px;
-margin-top: 100px;
+margin-top: 200px;
 display: flex;
 align-content: center;
 align-items: center;
