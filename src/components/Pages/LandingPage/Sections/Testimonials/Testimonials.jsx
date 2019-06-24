@@ -16,7 +16,8 @@ position: relative;
 
 const TextHolder = styled.div`
 font-weight: 200;
-font-size: 12px;
+font-size: 14px;
+  font-style: italic;
 
 @media only screen and (max-width: 425) {
     font-size: 3px;
@@ -108,7 +109,7 @@ export default function Testimonials() {
       show: false,
       name: 'Marcos Berroa',
       role: 'Car dealership owner',
-      picture: '/images/sample-user-3.jpeg',
+      picture: '/images/sample-user-4.jpg',
       message: 'The process was nice and easy from start to finish, I had a great customer service. I would recommend Pierpont Global to everyone looking for cars.',
     }]);
 
@@ -134,7 +135,7 @@ export default function Testimonials() {
       <PoseGroup>
         {testimonials.map(item => <Testimony key={item.id}>
           <img src={item.picture} style={{ width: '80px', height: '80px', borderRadius: '50%' }} />
-          <TextHolder>{item.message}</TextHolder>
+          <TextHolder>"{item.message}" — <span style={{ fontWeight: 700 }}>{item.name}</span> ({item.role})</TextHolder>
         </Testimony>)}
       </PoseGroup>
     </List>
