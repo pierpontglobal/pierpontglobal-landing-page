@@ -54,4 +54,10 @@ export const ItemsContainer = styled.div`
   left: 0;
   right: 0;
   padding: 0 10px;
+  @media only screen and (max-width: 768px) {
+    width: 95%;
+  }
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+  }
 `;

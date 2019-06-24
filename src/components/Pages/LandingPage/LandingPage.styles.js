@@ -12,6 +12,12 @@ export const Heading = styled.div`
   font-size: 42px;
   color: white;
   font-weight: 400;
+  @media only screen and (max-width: 768px) {
+    font-size: 36px;
+  }
+  @media only screen and (max-width: 480px) {
+    font-size: 24px;
+  }
 `;
 
 export const TextBody = styled.div`
