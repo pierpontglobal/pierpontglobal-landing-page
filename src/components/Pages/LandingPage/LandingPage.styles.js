@@ -17,6 +17,7 @@ export const Heading = styled.div`
   }
   @media only screen and (max-width: 480px) {
     font-size: 1.5rem;
+    margin-top: 10%;
   }
 `;
 
@@ -29,13 +30,13 @@ export const TextBody = styled.div`
   @media only screen and (max-width: 768px) {
     line-height: 30px;
     font-size: 1.24rem;
-    margin-right: 40%;
+    margin-right: 20%;
     max-width: 80%;
   }
   @media only screen and (max-width: 480px) {
     line-height: 30px;
     font-size: 1.16rem;
-    margin-right: 40%;
+    margin-right: 5%;
     max-width: 90%;
   }
 `;

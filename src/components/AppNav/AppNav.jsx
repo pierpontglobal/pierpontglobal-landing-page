@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {
   Bar,
   Logo,
+  LogoWrapper,
   ItemsContainer,
   BasicChangeableButton,
   UsefulLinks,
@@ -41,7 +42,7 @@ const AppNav = (props) => {
   );
 
   const usefulLinksDesktop = (
-    <>
+    <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <a href="https://app.pierpontglobal.com/support">
         <BasicChangeableButton textColor={textColor}>
           Help
@@ -52,7 +53,7 @@ const AppNav = (props) => {
           Sign in <i className="material-icons">arrow_forward</i>
         </BasicChangeableButton>
       </a>
-    </>
+    </div>
   );
 
   const usefulLinksMobile = (
@@ -92,7 +93,9 @@ const AppNav = (props) => {
   return (
     <Bar background={color} id="navbar">
       <ItemsContainer>
-        <Logo src={logo} />
+        <LogoWrapper>
+          <Logo src={logo} />
+        </LogoWrapper>
         <UsefulLinks>{usefulLinksContent}</UsefulLinks>
       </ItemsContainer>
     </Bar>

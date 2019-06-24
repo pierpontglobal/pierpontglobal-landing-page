@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {Button} from '@material-ui/core';
 
 export const Bar = styled.div`
-  height: 64px;
+  height: 54px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -15,9 +15,16 @@ export const Bar = styled.div`
       : 'rgba(0, 0, 0, 0.09) 0px 2px 6px 0px'};
 `;
 
-export const Logo = styled.img`
+export const LogoWrapper = styled.div`
   height: 100%;
   margin-left: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Logo = styled.img`
+  height: 60%;
 `;
 
 export const BasicChangeableButton = styled(Button)`
@@ -38,18 +45,16 @@ export const BasicChangeableButton = styled(Button)`
 export const UsefulLinks = styled.div`
   display: flex;
   justify-content: space-between;
-  justify-items: space-between;
+  justify-items: center;
 `;
 
 export const ItemsContainer = styled.div`
-  height: calc(100% - 30px);
-  height: -webkit-calc(100% - 30px);
-  height: -moz-calc(100% - 30px);
+  height: 100%;
   width: 85%;
   display: flex;
   justify-content: space-between;
   justify-items: space-between;
-  margin: 10px auto;
+  margin: 0px auto;
   position: absolute;
   left: 0;
   right: 0;
