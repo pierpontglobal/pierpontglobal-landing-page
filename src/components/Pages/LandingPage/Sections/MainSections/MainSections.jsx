@@ -344,7 +344,7 @@ class MainSections extends React.Component {
     super(props);
     this.state = {
       sections: [
-        { 
+        {
           id: 1,
           showTitle: false,
           animatedImage: '/gifs/search-listigns-f-2.gif',
@@ -363,9 +363,9 @@ class MainSections extends React.Component {
         {
           id: 3,
           showTitle: false,
-          animatedImage: '/images/track-shippment.jpeg',
-          stoppedImage: '/images/track-shippment.jpeg',
-          activeImage: '/images/track-shippment.jpeg',
+          animatedImage: '/images/track-shippment.png',
+          stoppedImage: '/images/track-shippment.png',
+          activeImage: '/images/track-shippment.png',
           titleAppeared: false
         },
       ]
@@ -386,7 +386,7 @@ class MainSections extends React.Component {
         threshold: 0.90, // Execute callback on 20% of reveal
       };
       this.observer = new IntersectionObserver((entry) => {
-        
+
         let sections = [...this.state.sections];
 
         if (entry[0].isIntersecting) {
@@ -415,7 +415,7 @@ class MainSections extends React.Component {
             this.setState({
               sections
             })
-          } 
+          }
         }
       }, options);
 
@@ -427,7 +427,7 @@ class MainSections extends React.Component {
   createObserver = () => {
     // Intersection observer (JavaScript)
     if (window.IntersectionObserver) {
-      
+
       // To observer elements
       this.searchListingSection = document.querySelector('#search-listing-section');
       this.placeBidSection = document.querySelector('#place-bid-section');
@@ -441,7 +441,7 @@ class MainSections extends React.Component {
 
       // Observer callback
       this.observer = new IntersectionObserver((entry) => {
-        
+
         let sections = [...this.state.sections];
 
         if (entry[0].isIntersecting) {
@@ -491,7 +491,7 @@ class MainSections extends React.Component {
             }, () => {
               // this.observer.unobserve(this.searchListingSection);
             })
-          } 
+          }
           else if (entry[0].target.id === 'track-shippment') {
             if (!sections.titleAppeared) {
               sections[2].showTitle = true;
@@ -595,7 +595,7 @@ class MainSections extends React.Component {
                   </SectionTitle>
                   <SectionParagraph index={1}>
                     <span>
-                    Our platform ties together thousands of listings, from dozens of Manheim Auction locations, giving you access to infinitely more vehicle options to buy from.
+                      Our platform ties together thousands of listings, from dozens of Manheim Auction locations, giving you access to infinitely more vehicle options to buy from.
                     </span>
                   </SectionParagraph>
                 </>
@@ -607,8 +607,8 @@ class MainSections extends React.Component {
           <SectionTextContent index={2}>
             {
               sections[1].showTitle ? (
-               <>
-                 <SectionTitle index={2} id="place-bid-title">
+                <>
+                  <SectionTitle index={2} id="place-bid-title">
                     Place bids
                   </SectionTitle>
                   <SectionParagraph index={2}>
@@ -616,7 +616,7 @@ class MainSections extends React.Component {
                       Bid on vehicles right from your computer. Using our provided pricing information and condition reports, you’ll have all the info you need to place well calculated bids.
                     </span>
                   </SectionParagraph>
-               </>
+                </>
               ) : null
             }
           </SectionTextContent>
