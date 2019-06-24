@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Bar,
   Logo,
@@ -6,13 +6,13 @@ import {
   BasicChangeableButton,
   UsefulLinks,
 } from './AppNav.styles';
-import {Link} from 'react-router-dom';
-import {unstable_useMediaQuery as useMediaQuery} from '@material-ui/core/useMediaQuery';
-import {Popover} from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import { Popover } from '@material-ui/core';
 
 const AppNav = (props) => {
   const [color, setColor] = useState('transparent');
-  const [logo, setLogo] = useState('/logos/light.png');
+  const [logo, setLogo] = useState('/logos/light.svg');
   const [textColor, setTextColor] = useState('white');
   const [menuReference, setMenuReference] = useState(React.createRef());
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,18 +20,18 @@ const AppNav = (props) => {
   useEffect(() => {
     window.addEventListener('scroll', () => {
       setColor(window.pageYOffset > 32 ? props.color : color);
-      setLogo(window.pageYOffset > 32 ? '/logos/dark.png' : logo);
+      setLogo(window.pageYOffset > 32 ? '/logos/dark.svg' : logo);
       setTextColor(window.pageYOffset > 32 ? '#3A3E43' : textColor);
     });
   }, []);
 
   const menuContent = (
     <>
-      <Link to="/support">
+      <a href="https://app.pierpontglobal.com/support">
         <BasicChangeableButton textColor={'#3A3E43'}>
           Help
         </BasicChangeableButton>
-      </Link>
+      </a>
       <a href="https://app.pierpontglobal.com/?signIn=true">
         <BasicChangeableButton textColor={'#3A3E43'}>
           Sign in <i className="material-icons">arrow_forward</i>
@@ -42,11 +42,11 @@ const AppNav = (props) => {
 
   const usefulLinksDesktop = (
     <>
-      <Link to="/support">
+      <a href="https://app.pierpontglobal.com/support">
         <BasicChangeableButton textColor={textColor}>
           Help
-        </BasicChangeableButton>
-      </Link>
+      </BasicChangeableButton>
+      </a>
       <a href="https://app.pierpontglobal.com">
         <BasicChangeableButton textColor={textColor}>
           Sign in <i className="material-icons">arrow_forward</i>
