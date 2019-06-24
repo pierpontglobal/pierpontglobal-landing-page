@@ -59,6 +59,7 @@ const ImageBoxInner = styled.div`
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  margin-bottom: 0px;
 `;
 
 const ImageBox = styled.div`
@@ -76,6 +77,9 @@ const ImageBox = styled.div`
     & > ${ImageBoxInner} {
       transform: rotateY(180deg);
     }
+    @media only screen and (max-width: 480px) {
+        margin-bottom: 40px;
+      }
   }
 
   @media only screen and (max-width: 768px) {
@@ -166,7 +170,7 @@ const ImgWrapper = styled.img`
   }
 `;
 const ImageWrapperAdesa = styled.img`
-  width: 386.4px;
+  width: 336.4px;
   height: auto;
   padding: 16px;
   z-index: 200;
