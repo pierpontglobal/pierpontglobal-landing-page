@@ -63,7 +63,7 @@ class SubscriptionDetails extends React.Component {
   render() {
     const { revealSecondaryBox } = this.state;
     return (
-      <Section style={{ height: 'auto' }}>
+      <Section style={{ height: '100vh' }}>
         <SectionTitle>
           <span>
             Simple and transparent pricing

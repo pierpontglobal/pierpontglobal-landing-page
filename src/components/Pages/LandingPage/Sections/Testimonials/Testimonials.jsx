@@ -37,14 +37,14 @@ max-width: 576px;
 `;
 
 const Degrade = styled.div`
-position: absolute;
-bottom: -10px;
-left: 0;
-width: 100%;
-height: 200px;
-background-image: url(/images/degrade.svg);
-background-position: bottom;
-background-repeat: no-repeat;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background-image: url(/images/degrade.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;
 `;
 
 const Title = styled.div`
@@ -116,7 +116,7 @@ export default function Testimonials() {
   useEffect(() => {
     setInterval(() => {
       const newArray = rollDown(testimonials);
-      setPosition(position => position + 1)
+      // setPosition(position => position + 1)
       setTestimonials(newArray);
     }, 10000)
   }, [])

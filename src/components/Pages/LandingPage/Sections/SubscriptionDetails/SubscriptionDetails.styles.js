@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
   justify-items: center;
   align-content: center;
   align-items: center;
-  height: 100%;
   flex-direction: row;
   @media only screen and (max-width: 768px) {
     flex-direction: column;
@@ -30,7 +29,7 @@ export const MainBox = styled.div`
 
 export const Title = styled.div`
   text-align: center;
-  padding: 32px;
+  padding: 16px;
   color: ${(props) => props.color};
   border-bottom: solid 2px ${(props) => props.color}10;
   font-size: 16px;
@@ -68,14 +67,14 @@ export const SecondaryBox = styled.div`
 `;
 
 export const TextH1 = styled.div`
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 200;
   text-align: center;
   padding: 32px;
 `;
 
 export const Currency = styled.div`
-  font-size: 16px;
+  font-size: 14px;
   height: 100%;
   align-self: flex-start;
   line-height: 2.3;
@@ -108,19 +107,19 @@ export const Money = styled.div`
     position: absolute;
     left: 105%;
     top: 8px;
-    font-size: 16px;
+    font-size: 14px;
   }
   ::after {
     content: "/car";
     position: absolute;
     left: 105%;
     bottom: 8px;
-    font-size: 16px;
+    font-size: 14px;
   }
 `;
 
 export const SubtitleText = styled.div`
-  padding: 0 48px;
+  padding: 0 24px;
   text-align: center;
   font-weight: 400;
   font-size: 14px;
@@ -133,7 +132,7 @@ export const Features = styled.div`
   padding: 48px 24px;
   grid-template-columns: 32px auto;
   grid-template-rows: auto auto auto;
-  grid-row-gap: 24px;
+  grid-row-gap: 16px;
   i {
     color: #777777;
   }
@@ -143,7 +142,7 @@ export const BoxButton = styled.div`
   font-size: 16px !important;
   font-weight: 400;
   text-align: center;
-  padding: 32px;
+  padding: 16px;
   background-color: rgba(0, 0, 0, 0.05);
   cursor: pointer;
   i {
@@ -155,13 +154,13 @@ export const BoxButton = styled.div`
 export const SubtleText = styled.div`
   padding: 0;
   font-weight: 200;
-  font-size: 16px;
+  font-size: 14px;
   color: #777777;
   line-height: 1.5;
 `;
 
 export const FeaturesBox = styled.div`
-  width: 80%;
+  width: 70%;
   height: 200px;
   display: grid;
   grid-template-columns: 50% 50%;
@@ -177,7 +176,6 @@ export const FeaturesBox = styled.div`
     border: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
     width: 100%;
-    height: 100%;
     text-align: center;
     align-self: center;
     justify-self: center;
@@ -191,7 +189,7 @@ export const BoxButtonDark = styled.div`
   font-size: 16px !important;
   font-weight: 400;
   text-align: center;
-  padding: 32px;
+  padding: 16px;
   background-color: #2c4962;
   cursor: pointer;
   i {

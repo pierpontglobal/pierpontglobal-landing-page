@@ -9,20 +9,20 @@ export const Section = styled.div`
 `;
 
 export const Heading = styled.div`
-  font-size: 2.0rem;
+  font-size: 1.7rem;
   color: white;
   font-weight: 400;
   @media only screen and (max-width: 768px) {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
   @media only screen and (max-width: 480px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-top: 10%;
   }
 `;
 
 export const TextBody = styled.div`
-  font-size: 1.32rem;
+  font-size: 1.22rem;
   color: white;
   line-height: 30px;
   font-weight: 200;
