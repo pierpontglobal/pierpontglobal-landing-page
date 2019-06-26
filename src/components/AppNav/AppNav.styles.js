@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {Button} from '@material-ui/core';
 
 export const Bar = styled.div`
-  height: 42px;
+  height: 54px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -34,7 +34,7 @@ export const BasicChangeableButton = styled(Button)`
   outline: none !important;
   box-shadow: none !important;
   font-weight: 600 !important;
-  font-size: 0.7rem !important;
+  font-size: 0.85rem !important;
   transition: 0.4s !important;
   padding: 0 30px !important;
   :hover {
