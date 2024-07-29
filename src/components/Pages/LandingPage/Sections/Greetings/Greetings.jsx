@@ -132,7 +132,7 @@ class Greetings extends React.Component {
                 </TextBody>
 
                 <div>
-                  <AccentButton style={{ margin: '20px 20px 10px 0' }} onClick={() => window.location.href = 'https://app.pierpontglobal.com/?register=true'}>
+                  <AccentButton style={{ margin: '20px 20px 10px 0' }} onClick={() => window.location.href = 'https://fe.ppg.hect.dev/?register=true'}>
                     <span>
                       Create account
                     </span>

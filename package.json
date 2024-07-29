@@ -2,6 +2,7 @@
   "name": "ppg-landing-page",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "yarn@1.22.22",
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^4.0.1",
