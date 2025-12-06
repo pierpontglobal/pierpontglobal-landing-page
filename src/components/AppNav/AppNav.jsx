@@ -28,12 +28,12 @@ const AppNav = (props) => {
 
   const menuContent = (
     <>
-      <a href="https://fe.ppg.hect.dev/support">
+      <a href="https://ppg.hect.dev/support">
         <BasicChangeableButton textColor={'#3A3E43'}>
           Help
         </BasicChangeableButton>
       </a>
-      <a href="https://fe.ppg.hect.dev/?signIn=true">
+      <a href="https://ppg.hect.dev/?signIn=true">
         <BasicChangeableButton textColor={'#3A3E43'}>
           Sign in <i className="material-icons">arrow_forward</i>
         </BasicChangeableButton>
@@ -43,12 +43,12 @@ const AppNav = (props) => {
 
   const usefulLinksDesktop = (
     <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-      <a href="https://fe.ppg.hect.dev/support">
+      <a href="https://ppg.hect.dev/support">
         <BasicChangeableButton textColor={textColor}>
           Help
       </BasicChangeableButton>
       </a>
-      <a href="https://fe.ppg.hect.dev">
+      <a href="https://ppg.hect.dev">
         <BasicChangeableButton textColor={textColor}>
           Sign in <i className="material-icons">arrow_forward</i>
         </BasicChangeableButton>
